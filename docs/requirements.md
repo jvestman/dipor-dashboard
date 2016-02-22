@@ -78,6 +78,7 @@ API (to be continued)
 The portal must contain an open API. There must be a machine-readable Swagger 2.0 description of the API and the documentation must be generated from this. API management takes place in APIKA service. API must be CORS enabled.
 
 Preliminary list of API endpoints
+---
 * List organizations. Content:
   * Organization name
   * Organization id in this portal
@@ -106,3 +107,6 @@ Preliminary list of API endpoints
   * Status/phase of service
   * Description of service
   * Data sources related to service development, e.g. link to repository, name of repository
+
+### Each development project for a service
+* One part of each service is that somewhere the is a definition / description of the essence of each project that has been created using Lean Canvas. Hence, there is no traditional project plan, which is followed, but the starting point for planning is Lean Canvas. This could be implemented in the service data that is filled by PO: each Lean Canvas field a header and a text field for content. It is not required that the content could be displayed as an actual canvas at this point.
