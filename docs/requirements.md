@@ -35,7 +35,7 @@ organization view for each of these):
 * User must be able to filter view according to the status/phase of service. Must not be implemented as drop-down menu. Could for instance be tags side by side and selecting which states/filters are active (should be possible to select more than one) and hence which projects are listed. Show only services defined public by PO.
 * User must be able to filter view to contain selected departments and their services. Show only services defined public by PO.
 * PO's will decide which services are public and which are shown only inside an organization. Visibility cannot be limited by department, only by organization.
-* 
+
 ### Department view (registered user, who is a member of the organization in question)
 * user must be able to filter view according to service status / phase
 
