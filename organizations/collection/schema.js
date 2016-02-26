@@ -12,6 +12,10 @@ Organizations.schema = new SimpleSchema({
   "administratorIds.$": {
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
+  },
+  "contactPersonId": {
+    "type": string,
+    "regEx": SimpleSchema.RegEx.Id
   }
 });
 
