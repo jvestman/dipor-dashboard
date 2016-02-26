@@ -1,9 +1,14 @@
 // Logged in user may create organization
 Organzations.permit('insert').apply();
 
-// Administrator role can delete
-Organizations.permit('delete').ifHasRole("admin").apply();
+// System administrator role may update or delete
+Organizations.permit(["update", "delete"]).ifHasRole("admin").apply();
 
+// Organization administrator(s) may delete or update
+Organizations.permit(["update", "delete"]).ifUserIsOrganizationAdmin().apply()
+
+
+// Define method to check if user is organization admin
 Security.defineMethod("ifUserIsOrganizationAdmin", {
   fetch: [],
   transform: null,
