@@ -3,7 +3,10 @@ Organizations.schema = new SimpleSchema({
   "name": {
     "type": String
   },
-  "administratorId": {
+  "administratorIds": {
+    "type": [String]
+  },
+  "administratorIds.$": {
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
   }
