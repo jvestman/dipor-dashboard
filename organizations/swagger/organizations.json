@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "Dipor - Finnish digital services portal",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "title": "Dipor",
     "contact": {
       "name": "API Team",
