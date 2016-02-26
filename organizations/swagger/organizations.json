@@ -137,6 +137,10 @@
     }
   },
   "definitions": {
+    "User": {
+      "type": "object",
+      "description": "System users who log in via accounts."
+    },
     "Organization": {
       "type": "object",
       "required": [
@@ -155,14 +159,14 @@
           "description": "A brief description of the organization."
         },
         "contactPersonId": {
-          "type": "string",
-          "description": "An ID of a system user to be used for contact purposes."
+          "description": "An ID of a system user to be used for contact purposes.",
+          "$ref": "#/definitions/User"
         },
         "administratorIds": {
           "type": "array",
           "description": "A list of one or more administrators, identified by ID.",
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/User"
           }
         }
       }
