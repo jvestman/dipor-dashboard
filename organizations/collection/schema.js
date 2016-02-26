@@ -3,6 +3,9 @@ Organizations.schema = new SimpleSchema({
   "name": {
     "type": String
   },
+  "description": {
+    "type": String
+  }
   "administratorIds": {
     "type": [String]
   },
