@@ -20,6 +20,10 @@
     {
       "name": "Organizations",
       "description": "Access and modify Dipor organizations"
+    },
+    {
+      "name": "Users",
+      "description": "System users"
     }
   ],
   "schemes": [
@@ -134,7 +138,34 @@
   },
   "definitions": {
     "Organization": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "administratorIds",
+        "contactPersonId",
+        "description",
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name for the organization."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the organization."
+        },
+        "contactPersonId": {
+          "type": "string",
+          "description": "An ID of a system user to be used for contact purposes."
+        },
+        "administratorIds": {
+          "type": "array",
+          "description": "A list of one or more administrators, identified by ID.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }
