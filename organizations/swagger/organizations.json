@@ -1,0 +1,140 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Dipor - Finnish digital services portal",
+    "version": "1.0.0",
+    "title": "Dipor",
+    "contact": {
+      "name": "API Team",
+      "url": "http://wordnik.com",
+      "email": "apiteam@wordnik.com"
+    },
+    "license": {
+      "name": "The MIT License (MIT)",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "dipor.io:443",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Organizations",
+      "description": "Access and modify Dipor organizations"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/organizations": {
+      "get": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of a specific organization",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Organization"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of the specific organization.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Organization"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of a specific organization",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Organization": {
+      "type": "object"
+    }
+  }
+}
