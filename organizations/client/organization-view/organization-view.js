@@ -1,5 +1,7 @@
 Template.organizationView.created = function () {
 
+    var instance = this;
+
 };
 
 Template.organizationView.rendered = function () {
@@ -10,3 +12,9 @@ Template.organizationView.rendered = function () {
     });
 
 };
+
+Template.organizationView.helpers({
+    organization: function () {
+
+    }
+});
