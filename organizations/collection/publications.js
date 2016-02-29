@@ -4,3 +4,11 @@ Meteor.publish("allOrganizations", function () {
 
   return allOrganizations;
 });
+
+// Single organization by ID
+Meteor.publish("singleOrganization", function (organizationId) {
+  // Get database cursor to a single organization
+  const singleOrganization = Organizations.find({ _id: organizationId });
+
+  return singleOrganization;
+});
