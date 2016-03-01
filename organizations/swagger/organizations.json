@@ -1,0 +1,175 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Dipor - Finnish digital services portal",
+    "version": "0.1.0",
+    "title": "Dipor",
+    "contact": {
+      "name": "API Team",
+      "url": "https://github.com/Digipalvelutehdas",
+      "email": "jarkko.moilanen@minedu.fi"
+    },
+    "license": {
+      "name": "The MIT License (MIT)",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "dipor.io:443",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Organizations",
+      "description": "Access and modify Dipor organizations"
+    },
+    {
+      "name": "Users",
+      "description": "System users"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/organizations": {
+      "get": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of a specific organization",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Organization"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of the specific organization.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Organization"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organizations"
+        ],
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Organization ID",
+            "in": "query",
+            "description": "ID of a specific organization",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "description": "System users who log in via accounts."
+    },
+    "Organization": {
+      "type": "object",
+      "required": [
+        "administratorIds",
+        "contactPersonId",
+        "description",
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name for the organization."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the organization."
+        },
+        "contactPersonId": {
+          "description": "An ID of a system user to be used for contact purposes.",
+          "$ref": "#/definitions/User"
+        },
+        "administratorIds": {
+          "type": "array",
+          "description": "A list of one or more administrators, identified by ID.",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    }
+  }
+}
