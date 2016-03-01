@@ -8,15 +8,6 @@ Template.singleOrganizationView.created = function () {
 
 };
 
-Template.singleOrganizationView.rendered = function () {
-
-    // Medium editor init
-    var editableField = new MediumEditor('.editable', {
-        toolbar: false
-    });
-
-};
-
 Template.singleOrganizationView.helpers({
     singleOrganization: function () {
 
