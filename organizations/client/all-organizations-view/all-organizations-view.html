@@ -1,0 +1,27 @@
+<template name="allOrganizationsView">
+
+    <div class="container">
+
+        <h3>Organizations</h3>
+
+        {{#if allOrganizations}}
+
+            {{#each organization in allOrganizations}}
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b>{{organization.name}}</b>
+                    </div>
+                    <div class="panel-body">
+                        {{organization.description}}
+                    </div>
+                </div>
+
+            {{/each}}
+
+        {{else}}
+            <i>No organizations found</i>
+        {{/if}}
+    </div>
+
+</template>
