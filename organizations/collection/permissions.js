@@ -1,5 +1,5 @@
 // Logged in user may create organization
-Organzations.permit('insert').apply();
+Organizations.permit('insert').apply();
 
 // System administrator role may update or delete
 Organizations.permit(["update", "delete"]).ifHasRole("admin").apply();
