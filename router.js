@@ -1,6 +1,6 @@
 FlowRouter.route('/organization/:organizationId', {
-    name: 'organizationView',
+    name: 'singleOrganizationView',
     action: function(params) {
-        BlazeLayout.render("mainLayout", { main: "organizationView" });
+        BlazeLayout.render("mainLayout", { main: "singleOrganizationView" });
     }
 });

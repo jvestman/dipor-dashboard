@@ -1,4 +1,4 @@
-Template.organizationView.created = function () {
+Template.singleOrganizationView.created = function () {
 
     var instance = this;
 
@@ -8,7 +8,7 @@ Template.organizationView.created = function () {
 
 };
 
-Template.organizationView.rendered = function () {
+Template.singleOrganizationView.rendered = function () {
 
     // Medium editor init
     var editableField = new MediumEditor('.editable', {
@@ -17,8 +17,8 @@ Template.organizationView.rendered = function () {
 
 };
 
-Template.organizationView.helpers({
-    organization: function () {
+Template.singleOrganizationView.helpers({
+    singleOrganization: function () {
 
         var instance = Template.instance();
 
