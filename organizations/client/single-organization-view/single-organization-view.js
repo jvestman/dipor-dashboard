@@ -14,8 +14,10 @@ Template.singleOrganizationView.created = function () {
 Template.singleOrganizationView.helpers({
     singleOrganization: function () {
 
+        // Get reference to template instance
         var instance = Template.instance();
 
+        // Fetch organization data and pass current organization Id
         return Organizations.findOne(instance.organizationId);
     }
 });
