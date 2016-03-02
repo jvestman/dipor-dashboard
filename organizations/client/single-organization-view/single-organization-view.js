@@ -36,11 +36,8 @@ Template.singleOrganizationView.helpers({
         // Get reference to template instance
         var instance = Template.instance();
 
-        // Get current user's Id
-        var currentUser = ''; // TODO: change '' to Meteor.userId() when authentication is implemented
-
         // Check if current user is organization admin using collection helper
-        return Organizations.findOne(instance.organizationId).userIsAdmin(currentUser);
+        return Organizations.findOne(instance.organizationId).currentUserIsAdmin();
     }
 });
 

@@ -1,11 +1,8 @@
 Meteor.methods({
     updateOrganization: function (organizationId, organizationData) {
 
-        // Get current user's Id
-        var currentUserId = ''; // TODO: change '' to Meteor.userId() when authentication is implemented
-
         // Check if current user is organization admin using collection helper
-        var currentUserIsOrganizationAdmin = Organizations.findOne(organizationId).userIsAdmin(currentUserId);
+        var currentUserIsOrganizationAdmin = Organizations.findOne(organizationId).currentUserIsAdmin();
 
         // Check if specific organization document is found
         if (currentUserIsOrganizationAdmin) {
