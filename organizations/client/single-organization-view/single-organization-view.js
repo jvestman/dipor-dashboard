@@ -9,7 +9,7 @@ Template.singleOrganizationView.created = function () {
     // Subscribe to singleOrganization publication and pass organization Id
     instance.subscribe('singleOrganization', instance.organizationId);
 
-    instance.editMode = new ReactiveVar(false);
+    instance.editOrganizationMode = new ReactiveVar(false);
 
 };
 
@@ -22,33 +22,60 @@ Template.singleOrganizationView.helpers({
         // Fetch organization data and pass current organization Id
         return Organizations.findOne(instance.organizationId);
     },
-    editMode: function () {
+    editOrganizationMode: function () {
 
         var instance = Template.instance();
 
-        return instance.editMode.get();
+        return instance.editOrganizationMode.get();
     }
 });
 
 Template.singleOrganizationView.events({
-    'click #editMode': function () {
+    'click #editOrganizationMode': function () {
 
         var instance = Template.instance();
 
-        instance.editor = new MediumEditor('.editable', {
-            toolbar: false
+        instance.organizationEditor = new MediumEditor('.editable', {
+            toolbar: false,
+            disableReturn: true,
+            disableExtraSpaces: true
         });
 
-        instance.editMode.set(true);
+        instance.editOrganizationMode.set(true);
 
     },
-    'click #cancelEditMode': function () {
+    'click #cancelEditOrganizationMode': function () {
 
         var instance = Template.instance();
 
-        instance.editor.destroy();
+        instance.organizationEditor.destroy();
 
-        instance.editMode.set(false);
+        instance.editOrganizationMode.set(false);
+
+    },
+    'click #updateOrganization': function (event) {
+
+        event.preventDefault();
+
+        var instance = Template.instance();
+
+        var organizationName = $('#organizationName').text();
+        var organizationDescription = $('#organizationDescription').text();
+
+        var organizationData = {
+            name: organizationName,
+            description: organizationDescription
+        };
+
+        Meteor.call('updateOrganization', instance.organizationId, organizationData, function (err) {
+
+            if (err) throw new Meteor.Error(err);
+
+        });
+
+        instance.organizationEditor.destroy();
+
+        instance.editOrganizationMode.set(false);
 
     }
 });
