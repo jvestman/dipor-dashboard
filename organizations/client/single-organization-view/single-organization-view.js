@@ -21,5 +21,34 @@ Template.singleOrganizationView.helpers({
 
         // Fetch organization data and pass current organization Id
         return Organizations.findOne(instance.organizationId);
+    },
+    editMode: function () {
+
+        var instance = Template.instance();
+
+        return instance.editMode.get();
+    }
+});
+
+Template.singleOrganizationView.events({
+    'click #editMode': function () {
+
+        var instance = Template.instance();
+
+        instance.editor = new MediumEditor('.editable', {
+            toolbar: false
+        });
+
+        instance.editMode.set(true);
+
+    },
+    'click #cancelEditMode': function () {
+
+        var instance = Template.instance();
+
+        instance.editor.destroy();
+
+        instance.editMode.set(false);
+
     }
 });

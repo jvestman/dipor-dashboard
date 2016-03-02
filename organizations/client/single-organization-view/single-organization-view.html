@@ -2,8 +2,16 @@
 
     <div class="container">
         <div>
-            <h1>{{singleOrganization.name}}</h1>
-            <p><i>{{singleOrganization.description}}</i></p>
+            <h1 class="editable">{{singleOrganization.name}}</h1>
+            <p><i class="editable">{{singleOrganization.description}}</i></p>
+            {{#unless editMode}}
+                <button class="btn btn-default btn-xs" id="editMode"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+            {{else}}
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-success btn-xs">Save</button>
+                    <button type="button" class="btn btn-default btn-xs" id="cancelEditMode">Cancel</button>
+                </div>
+            {{/unless}}
         </div>
     </div>
 
