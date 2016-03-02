@@ -21,3 +21,4 @@ kadira:flow-router
 kadira:blaze-layout
 twbs:bootstrap
 ongoworks:security
+tap:i18n
