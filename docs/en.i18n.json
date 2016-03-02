@@ -1,5 +1,5 @@
 {
-  "navigation-home": "Home",
-  "navigation-organizations": "Organizations",
+  "mainLayoutNavigation-home": "Home",
+  "mainLayoutNavigation-organizations": "Organizations",
   "allOrganizationsView-Organizations": "Organizations"
 }
