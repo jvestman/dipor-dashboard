@@ -4,7 +4,8 @@ Meteor.methods({
         Organizations.update(organizationId, {
             $set: {
                 name: organizationData.name,
-                description: organizationData.description
+                description: organizationData.description,
+                updatedAt: new Date()
             }
         });
 
