@@ -9,6 +9,8 @@ Template.singleOrganizationView.created = function () {
     // Subscribe to singleOrganization publication and pass organization Id
     instance.subscribe('singleOrganization', instance.organizationId);
 
+    instance.editMode = new ReactiveVar(false);
+
 };
 
 Template.singleOrganizationView.helpers({
