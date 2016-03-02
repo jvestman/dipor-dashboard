@@ -30,6 +30,18 @@ Template.singleOrganizationView.helpers({
 
         // Get reactive var value
         return instance.editOrganizationMode.get();
+    },
+    currentUserIsOrganizationAdmin: function () {
+
+        // Get reference to template instance
+        var instance = Template.instance();
+
+        // TODO: change '' to Meteor.userId() when authentication is implemented
+        // Get current user's Id
+        var currentUser = ''; // Meteor.userId();
+
+        // Check if current user is organization admin using collection helper
+        return Organizations.findOne(instance.organizationId).userIsAdmin(currentUser);
     }
 });
 
