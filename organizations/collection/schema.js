@@ -16,6 +16,14 @@ Organizations.schema = new SimpleSchema({
   "contactPersonId": {
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
+  },
+  createdAt: {
+    type: Date,
+    optional: true
+  },
+  updatedAt: {
+    type: Date,
+    optional: true
   }
 });
 
