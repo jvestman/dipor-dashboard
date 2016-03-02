@@ -7,7 +7,8 @@ Organizations.schema = new SimpleSchema({
     "type": String
   },
   "administratorIds": {
-    "type": [String]
+    "type": [String],
+    "optional": true
   },
   "administratorIds.$": {
     "type": String,
@@ -15,7 +16,8 @@ Organizations.schema = new SimpleSchema({
   },
   "contactPersonId": {
     "type": String,
-    "regEx": SimpleSchema.RegEx.Id
+    "regEx": SimpleSchema.RegEx.Id,
+    "optional": true
   }
 });
 
