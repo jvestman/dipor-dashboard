@@ -36,9 +36,8 @@ Template.singleOrganizationView.helpers({
         // Get reference to template instance
         var instance = Template.instance();
 
-        // TODO: change '' to Meteor.userId() when authentication is implemented
         // Get current user's Id
-        var currentUser = ''; // Meteor.userId();
+        var currentUser = ''; // TODO: change '' to Meteor.userId() when authentication is implemented
 
         // Check if current user is organization admin using collection helper
         return Organizations.findOne(instance.organizationId).userIsAdmin(currentUser);
@@ -97,12 +96,7 @@ Template.singleOrganizationView.events({
 
         // Call organizationData meteor method
         // Pass organizationId, organization data
-        Meteor.call('updateOrganization', instance.organizationId, organizationData, function (err) {
-
-            // If callback returns error, throw it
-            if (err) throw new Meteor.Error(err);
-
-        });
+        Meteor.call('updateOrganization', instance.organizationId, organizationData);
 
         // Deconstruct medium-editor
         instance.organizationEditor.destroy();
