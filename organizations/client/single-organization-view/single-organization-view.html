@@ -7,10 +7,16 @@
                 <p><i class="editable" id="organizationDescription">{{singleOrganization.description}}</i></p>
                 {{#if currentUserIsOrganizationAdmin}}
                     {{#unless editOrganizationMode}}
-                        <button class="btn btn-default btn-xs" id="editOrganizationMode"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+                        <button class="btn btn-default btn-xs" id="editOrganizationMode">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Edit
+                        </button>
                     {{else}}
                         <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-success btn-xs" id="updateOrganization">Save</button>
+                            <button type="button" class="btn btn-success btn-xs" id="updateOrganization">
+                                <span class="glyphicon glyphicon-ok"></span>
+                                Save
+                            </button>
                             <button type="button" class="btn btn-default btn-xs" id="cancelEditOrganizationMode">Cancel</button>
                         </div>
                     {{/unless}}
