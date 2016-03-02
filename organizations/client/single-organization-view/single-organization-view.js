@@ -9,6 +9,7 @@ Template.singleOrganizationView.created = function () {
     // Subscribe to singleOrganization publication and pass organization Id
     instance.subscribe('singleOrganization', instance.organizationId);
 
+    // Initialise reactive variable
     instance.editOrganizationMode = new ReactiveVar(false);
 
 };
@@ -24,32 +25,44 @@ Template.singleOrganizationView.helpers({
     },
     editOrganizationMode: function () {
 
+        // Get reference to template instance
         var instance = Template.instance();
 
+        // Get reactive var value
         return instance.editOrganizationMode.get();
     }
 });
 
 Template.singleOrganizationView.events({
-    'click #editOrganizationMode': function () {
+    'click #editOrganizationMode': function (event) {
 
+        event.preventDefault();
+
+        // Get reference to template instance
         var instance = Template.instance();
 
+        // Initialize medium editor
         instance.organizationEditor = new MediumEditor('.editable', {
             toolbar: false,
             disableReturn: true,
             disableExtraSpaces: true
         });
 
+        // Update reactive variable
         instance.editOrganizationMode.set(true);
 
     },
-    'click #cancelEditOrganizationMode': function () {
+    'click #cancelEditOrganizationMode': function (event) {
 
+        event.preventDefault();
+
+        // Get reference to template instance
         var instance = Template.instance();
 
+        // Deconstruct medium-editor
         instance.organizationEditor.destroy();
 
+        // Update reactive variable
         instance.editOrganizationMode.set(false);
 
     },
@@ -57,24 +70,32 @@ Template.singleOrganizationView.events({
 
         event.preventDefault();
 
+        // Get reference to template instance
         var instance = Template.instance();
 
+        // Get organization field values
         var organizationName = $('#organizationName').text();
         var organizationDescription = $('#organizationDescription').text();
 
+        // Construct object that handles organization data
         var organizationData = {
             name: organizationName,
             description: organizationDescription
         };
 
+        // Call organizationData meteor method
+        // Pass organizationId, organization data
         Meteor.call('updateOrganization', instance.organizationId, organizationData, function (err) {
 
+            // If callback returns error, throw it
             if (err) throw new Meteor.Error(err);
 
         });
 
+        // Deconstruct medium-editor
         instance.organizationEditor.destroy();
 
+        // Update reactive variable
         instance.editOrganizationMode.set(false);
 
     }
