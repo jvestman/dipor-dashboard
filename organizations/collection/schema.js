@@ -20,6 +20,9 @@ Organizations.schema = new SimpleSchema({
   "createdAt": {
     "type": Date,
     "optional": true
+    "defaultValue": function () {
+      return new Date();
+    }
   },
   "updatedAt": {
     "type": Date,
