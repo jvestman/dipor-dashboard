@@ -15,14 +15,12 @@ Organizations.schema = new SimpleSchema({
   },
   "contactPersonId": {
     "type": String,
-    "regEx": SimpleSchema.RegEx.Id
+    "regEx": SimpleSchema.RegEx.Id,
+    "optional": true
   },
   "createdAt": {
     "type": Date,
     "optional": true
-    "defaultValue": function () {
-      return new Date();
-    }
   },
   "updatedAt": {
     "type": Date,
