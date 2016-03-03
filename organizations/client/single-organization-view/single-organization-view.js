@@ -11,7 +11,6 @@ Template.singleOrganizationView.created = function () {
 
     // Initialise reactive variable
     instance.editOrganizationMode = new ReactiveVar(false);
-
 };
 
 Template.singleOrganizationView.helpers({
@@ -84,16 +83,6 @@ Template.singleOrganizationView.events({
         // Get organization field values
         var organizationName = $('#organizationName').text();
         var organizationDescription = $('#organizationDescription').text();
-
-        // Construct object that handles organization data
-        var organizationData = {
-            name: organizationName,
-            description: organizationDescription
-        };
-
-        // Call organizationData meteor method
-        // Pass organizationId, organization data
-        Meteor.call('updateOrganization', instance.organizationId, organizationData);
 
         // Deconstruct medium-editor
         instance.organizationEditor.destroy();
