@@ -11,6 +11,12 @@ Template.singleOrganizationView.created = function () {
 
     // Initialise reactive variable
     instance.editOrganizationMode = new ReactiveVar(false);
+
+    instance.autorun(function () {
+      if (instance.subscriptionsReady()) {
+        instance.organization = Organizations.findOne(instance.organizationId);
+      }
+    });
 };
 
 Template.singleOrganizationView.helpers({
@@ -20,7 +26,7 @@ Template.singleOrganizationView.helpers({
         var instance = Template.instance();
 
         // Fetch organization data and pass current organization Id
-        return Organizations.findOne(instance.organizationId);
+        return instance.organization;
     },
     editOrganizationMode: function () {
 
