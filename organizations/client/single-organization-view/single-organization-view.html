@@ -1,7 +1,6 @@
 <template name="singleOrganizationView">
-
     <div class="container">
-        <div>
+        <div id="organization">
             {{#if Template.subscriptionsReady}}
                 <h1><span class="editable" id="organizationName">{{singleOrganization.name}}</span></h1>
                 <p><i class="editable" id="organizationDescription">{{singleOrganization.description}}</i></p>
@@ -24,5 +23,4 @@
             {{/if}}
         </div>
     </div>
-
 </template>
