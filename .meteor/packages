@@ -24,3 +24,5 @@ mediumeditor:mediumeditor
 tap:i18n
 reactive-var
 dburles:collection-helpers
+accounts-password
+accounts-ui
