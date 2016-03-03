@@ -17,13 +17,13 @@ Organizations.schema = new SimpleSchema({
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
   },
-  createdAt: {
-    type: Date,
-    optional: true
+  "createdAt": {
+    "type": Date,
+    "optional": true
   },
-  updatedAt: {
-    type: Date,
-    optional: true
+  "updatedAt": {
+    "type": Date,
+    "optional": true
   }
 });
 
