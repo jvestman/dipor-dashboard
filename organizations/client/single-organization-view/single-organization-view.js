@@ -78,9 +78,21 @@ Template.singleOrganizationView.events({
         // Get reference to template instance
         const instance = Template.instance();
 
+        // Get organization reference
+        const organizationId = instance.organizationId
+
         // Get organization field values
         var organizationName = $('#organizationName').text();
         var organizationDescription = $('#organizationDescription').text();
+
+        // Update organization data
+        Organizations.update(organizationId, {
+            $set: {
+                name: organizationName,
+                description: organizationDescription,
+                updatedAt: new Date()
+            }
+        });
 
         // Deconstruct medium-editor
         instance.organizationEditor.destroy();
