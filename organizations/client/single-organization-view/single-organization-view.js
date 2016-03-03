@@ -77,7 +77,7 @@ Template.singleOrganizationView.events({
 
         // Reset UI text to current value
         $('#organizationName').text(organization.name);
-        var organizationDescription = $('#organizationDescription').text(organization.description);
+        $('#organizationDescription').text(organization.description);
     },
     'click #updateOrganization': function (event) {
         event.preventDefault();
