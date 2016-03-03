@@ -66,11 +66,18 @@ Template.singleOrganizationView.events({
         // Get reference to template instance
         const instance = Template.instance();
 
+        // Get existing organization text
+        const organization = instance.organization;
+
         // Deconstruct medium-editor
         instance.organizationEditor.destroy();
 
         // Update reactive variable
         instance.editOrganizationMode.set(false);
+
+        // Reset UI text to current value
+        $('#organizationName').text(organization.name);
+        var organizationDescription = $('#organizationDescription').text(organization.description);
     },
     'click #updateOrganization': function (event) {
         event.preventDefault();
