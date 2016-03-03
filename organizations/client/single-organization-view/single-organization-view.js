@@ -81,15 +81,11 @@ Template.singleOrganizationView.events({
         // Get organization reference
         const organizationId = instance.organizationId
 
-        // Get organization field values
-        var organizationName = $('#organizationName').text();
-        var organizationDescription = $('#organizationDescription').text();
-
         // Update organization data
         Organizations.update(organizationId, {
             $set: {
-                name: organizationName,
-                description: organizationDescription,
+                name: $('#organizationName').text(),
+                description: $('#organizationDescription').text(),
                 updatedAt: new Date()
             }
         });
