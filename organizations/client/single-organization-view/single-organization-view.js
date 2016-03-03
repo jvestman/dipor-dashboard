@@ -39,7 +39,7 @@ Template.singleOrganizationView.helpers({
         const instance = Template.instance();
 
         // Check if current user is organization admin using collection helper
-        return Organizations.findOne(instance.organizationId).currentUserIsAdmin();
+        return instance.organization.currentUserIsAdmin();
     }
 });
 
