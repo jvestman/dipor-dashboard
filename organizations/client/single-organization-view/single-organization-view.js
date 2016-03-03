@@ -1,7 +1,7 @@
 Template.singleOrganizationView.created = function () {
 
     // Get reference to template instance
-    var instance = this;
+    const instance = this;
 
     // Get current organization Id
     instance.organizationId = FlowRouter.current().params.organizationId;
@@ -21,25 +21,22 @@ Template.singleOrganizationView.created = function () {
 
 Template.singleOrganizationView.helpers({
     singleOrganization: function () {
-
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Fetch organization data and pass current organization Id
         return instance.organization;
     },
     editOrganizationMode: function () {
-
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Get reactive var value
         return instance.editOrganizationMode.get();
     },
     currentUserIsOrganizationAdmin: function () {
-
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Check if current user is organization admin using collection helper
         return Organizations.findOne(instance.organizationId).currentUserIsAdmin();
@@ -48,11 +45,10 @@ Template.singleOrganizationView.helpers({
 
 Template.singleOrganizationView.events({
     'click #editOrganizationMode': function (event) {
-
         event.preventDefault();
 
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Initialize medium editor
         instance.organizationEditor = new MediumEditor('.editable', {
@@ -63,28 +59,24 @@ Template.singleOrganizationView.events({
 
         // Update reactive variable
         instance.editOrganizationMode.set(true);
-
     },
     'click #cancelEditOrganizationMode': function (event) {
-
         event.preventDefault();
 
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Deconstruct medium-editor
         instance.organizationEditor.destroy();
 
         // Update reactive variable
         instance.editOrganizationMode.set(false);
-
     },
     'click #updateOrganization': function (event) {
-
         event.preventDefault();
 
         // Get reference to template instance
-        var instance = Template.instance();
+        const instance = Template.instance();
 
         // Get organization field values
         var organizationName = $('#organizationName').text();
@@ -95,6 +87,5 @@ Template.singleOrganizationView.events({
 
         // Update reactive variable
         instance.editOrganizationMode.set(false);
-
     }
 });
