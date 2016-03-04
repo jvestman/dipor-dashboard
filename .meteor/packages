@@ -22,5 +22,7 @@ kadira:blaze-layout
 twbs:bootstrap
 mediumeditor:mediumeditor
 tap:i18n
+simple:rest
+accounts-base
 accounts-password
 accounts-ui
