@@ -8,7 +8,6 @@ Organizations.schema = new SimpleSchema({
   },
   "administratorIds": {
     "type": [String],
-    "optional": true
   },
   "administratorIds.$": {
     "type": String,
