@@ -17,6 +17,17 @@ Organizations.schema = new SimpleSchema({
     "type": String,
     "regEx": SimpleSchema.RegEx.Id,
     "optional": true
+  },
+  "createdAt": {
+    "type": Date,
+    "optional": true,
+    "autoValue": function () {
+      return new Date();
+    }
+  },
+  "updatedAt": {
+    "type": Date,
+    "optional": true
   }
 });
 
