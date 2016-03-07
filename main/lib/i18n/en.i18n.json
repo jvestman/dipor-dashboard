@@ -1,3 +1,6 @@
 {
-  "allOrganizations-createOrganizationButton": "Create Organization"
+  "allOrganizations-createOrganizationButton": "Create Organization",
+  "mainLayoutNavigation-home": "Home",
+  "mainLayoutNavigation-organizations": "Organizations",
+  "allOrganizationsView-Organizations": "Organizations"
 }
