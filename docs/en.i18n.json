@@ -1,5 +1,7 @@
 {
   "mainLayoutNavigation-home": "Home",
   "mainLayoutNavigation-organizations": "Organizations",
-  "allOrganizationsView-Organizations": "Organizations"
+  "allOrganizationsView-Organizations": "Organizations",
+  "profile_Header": "Profile",
+  "profile_UpdateButton": "Update"
 }
