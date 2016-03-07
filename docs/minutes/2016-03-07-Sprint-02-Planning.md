@@ -17,10 +17,10 @@ Brylie
 * #72 Create sign up / sign in page - 5h
 
 Damir
-* #50 Create a modal view for adding a department
-* #51 Add inline editing to single department view
-* #53 Create a department member management view
-* #70 Explore plotly.js
+* #50 Create a modal view for adding a department - 8h
+* #51 Add inline editing to single department view - 5h
+* #53 Create a department member management view - 15h
+* #70 Explore plotly.js - 13h
 
 Illya
 * #56 Create portal logo - 1h
