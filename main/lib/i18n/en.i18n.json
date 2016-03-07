@@ -3,5 +3,8 @@
   "allOrganizations-Organizations": "Organizations",
   "mainLayoutNavigation-home": "Home",
   "mainLayoutNavigation-organizations": "Organizations",
-  "singleOrganization-createDepartmentButton": "Create Department"
+  "singleOrganization-openCreateDepartmentModal": "Create Department",
+  "createDepartment=AddDepartment": "Add Department",
+  "createDepartment=createDepartmentButton": "Create",
+  "createDepartment=cancelCreateDepartmentButton": "Cancel"
 }
