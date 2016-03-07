@@ -1,12 +1,14 @@
 <template name="allOrganizations">
   <div class="container">
     <h1>
+      {{# if currentUser }}
       <button
         id="create-organization"
         type="button"
         class="btn btn-default pull-right">
         {{_ "allOrganizations-createOrganizationButton" }}
       </button>
+      {{/ if }}
       {{_ "allOrganizations-Organizations" }}
     </h1>
     {{# if allOrganizations.count }}
