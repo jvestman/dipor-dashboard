@@ -11,3 +11,9 @@ Template.allOrganizations.helpers({
     return Organizations.find();
   }
 });
+
+Template.allOrganizations.events({
+  "click #create-organization": function () {
+    console.log("clicked");
+  }
+});
