@@ -14,6 +14,7 @@ Template.allOrganizations.helpers({
 
 Template.allOrganizations.events({
   "click #create-organization": function () {
-    console.log("clicked");
+    // Show the create organization modal
+    Modal.show('createOrganization');
   }
 });
