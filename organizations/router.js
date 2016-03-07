@@ -1,13 +1,13 @@
 FlowRouter.route('/organizations', {
-  name: 'allOrganizationsView',
+  name: 'allOrganizations',
   action: function (params) {
-    BlazeLayout.render("mainLayout", { main: "allOrganizationsView" });
+    BlazeLayout.render("mainLayout", { main: "allOrganizations" });
   }
 });
 
 FlowRouter.route('/organization/:organizationId', {
-  name: 'singleOrganizationView',
+  name: 'singleOrganization',
   action: function (params) {
-    BlazeLayout.render("mainLayout", { main: "singleOrganizationView" });
+    BlazeLayout.render("mainLayout", { main: "singleOrganization" });
   }
 });

@@ -1,4 +1,4 @@
-Template.allOrganizationsView.created = function () {
+Template.allOrganizations.created = function () {
   // Get reference to template instance
   var instance = this;
 
@@ -6,7 +6,7 @@ Template.allOrganizationsView.created = function () {
   instance.subscribe('allOrganizations');
 };
 
-Template.allOrganizationsView.helpers({
+Template.allOrganizations.helpers({
   allOrganizations: function () {
     return Organizations.find();
   }
