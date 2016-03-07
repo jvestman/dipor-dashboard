@@ -1,0 +1,20 @@
+<template name="createOrganization">
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Organization</h4>
+        </div>
+        {{#autoForm collection="Organizations" id="createOrganizationForm" type="insert"}}
+        <div class="modal-body">
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
