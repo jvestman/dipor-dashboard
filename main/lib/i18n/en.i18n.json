@@ -2,5 +2,6 @@
   "allOrganizations-createOrganizationButton": "Create Organization",
   "allOrganizations-Organizations": "Organizations",
   "mainLayoutNavigation-home": "Home",
-  "mainLayoutNavigation-organizations": "Organizations"
+  "mainLayoutNavigation-organizations": "Organizations",
+  "singleOrganization-createDepartmentButton": "Create Department"
 }
