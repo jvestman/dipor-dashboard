@@ -29,3 +29,5 @@ tap:i18n
 reactive-var
 dburles:collection-helpers
 simple:rest
+peppelg:bootstrap-3-modal
+aldeed:autoform

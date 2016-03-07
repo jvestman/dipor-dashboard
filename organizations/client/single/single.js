@@ -1,4 +1,4 @@
-Template.singleOrganizationView.created = function () {
+Template.singleOrganization.created = function () {
   // Get reference to template instance
   const instance = this;
 
@@ -18,7 +18,7 @@ Template.singleOrganizationView.created = function () {
   });
 };
 
-Template.singleOrganizationView.helpers({
+Template.singleOrganization.helpers({
   singleOrganization: function () {
     // Get reference to template instance
     const instance = Template.instance();
@@ -42,7 +42,7 @@ Template.singleOrganizationView.helpers({
   }
 });
 
-Template.singleOrganizationView.events({
+Template.singleOrganization.events({
   'click #editOrganizationMode': function (event) {
     event.preventDefault();
 
