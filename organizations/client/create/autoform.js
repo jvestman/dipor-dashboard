@@ -12,5 +12,9 @@ AutoForm.addHooks("createOrganizationForm", {
         return organization;
       }
     }
+  },
+  "onSuccess": function () {
+    // Hide the create organization modal
+    Modal.hide('createOrganization');
   }
 });
