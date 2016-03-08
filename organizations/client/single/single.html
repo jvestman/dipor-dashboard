@@ -32,9 +32,7 @@
       {{/unless}}
       {{/if}}
     </div>
-    {{> organizationMembers
-      organizationId=_id
-      memberIds=memberIds }}
+    {{> organizationMembers organization=organization }}
     {{/ with }} <!-- /with organization -->
     {{/if}} <!-- /if Template.subscriptionsReady -->
   </div>
