@@ -3,7 +3,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add Organization</h4>
+          <h4 class="modal-title">
+            {{_ "createOrganization-header" }}
+          </h4>
         </div>
         {{#autoForm collection="Organizations" id="createOrganizationForm" type="insert"}}
         <div class="modal-body">
