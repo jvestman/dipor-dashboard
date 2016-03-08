@@ -8,6 +8,9 @@ Template.singleOrganization.created = function () {
   // Subscribe to singleOrganization publication and pass organization Id
   instance.subscribe('singleOrganization', instance.organizationId);
 
+  // Subscribe to organization member profiles
+  instance.subscribe("organizationMembers", instance.organizationId);
+
   // Initialise reactive variable
   instance.editOrganizationMode = new ReactiveVar(false);
 };
