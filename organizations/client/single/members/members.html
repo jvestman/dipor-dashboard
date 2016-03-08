@@ -2,14 +2,21 @@
   <div id="organization-members" class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
+        {{#if organization.currentUserIsAdmin }}
         <button
           id="add-member"
           class="btn btn-default btn-xs pull-right">
           Add
         </button>
+        {{/ if }}
         <span>Members</span>
       </div>
       <div class="panel-body">
+        <ul>
+          {{# each memberId in organization.memberIds }}
+          {{> organizationMember memberId=memberId }}
+          {{/ each }}
+        </ul>
         <p>Members list...</p>
       </div>
     </div>
