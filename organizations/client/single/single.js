@@ -39,15 +39,6 @@ Template.singleOrganization.helpers({
 
     // Check if current user is organization admin using collection helper
     return instance.organization.currentUserIsAdmin();
-  },
-  "organizationId": function () {
-    // Get reference to template instance
-    const instance = Template.instance();
-
-    // Get organization ID from instance variable
-    const organizationId = instance.organizationId;
-
-    return organizationId;
   }
 });
 
