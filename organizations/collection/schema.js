@@ -18,6 +18,14 @@ Organizations.schema = new SimpleSchema({
     "regEx": SimpleSchema.RegEx.Id,
     "optional": true
   },
+  "memberIds": {
+    "type": [String],
+    optional: true
+  },
+  "memberIds.$": {
+    "type": String,
+    "regEx": SimpleSchema.RegEx.Id
+  },
   "createdAt": {
     "type": Date,
     "optional": true,
