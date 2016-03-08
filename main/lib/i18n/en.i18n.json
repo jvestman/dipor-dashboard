@@ -3,6 +3,7 @@
   "addOrganizationMember-cancelButton": "Cancel",
   "addOrganizationMember-emailField-helpText": "Enter an email address for an existing user account.",
   "addOrganizationMember-title": "Add member",
+  "createOrganization-header": "Create organization",
   "organizationMembers-addButton": "Add",
   "organizationMembers-header": "Members",
   "organizationMembers-noResultsText": "Organization has no members.",
