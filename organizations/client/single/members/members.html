@@ -12,12 +12,15 @@
         <span>Members</span>
       </div>
       <div class="panel-body">
+        {{# if organization.memberIds }}
         <ul>
           {{# each memberId in organization.memberIds }}
           {{> organizationMember memberId=memberId }}
           {{/ each }}
         </ul>
-        <p>Members list...</p>
+        {{ else }}
+        <p>Organization has no members.</p>
+        {{/ if }}
       </div>
     </div>
   </div>
