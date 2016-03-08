@@ -29,16 +29,6 @@ Template.singleOrganization.helpers({
 
     // Get reactive var value
     return instance.editOrganizationMode.get();
-  },
-  currentUserIsOrganizationAdmin: function () {
-    // Get reference to template instance
-    const instance = Template.instance();
-
-    // Get organization
-    const organization = Organizations.findOne(instance.organizationId);
-
-    // Check if current user is organization admin using collection helper
-    return organization.currentUserIsAdmin();
   }
 });
 
