@@ -6,10 +6,12 @@
         <button
           id="add-member"
           class="btn btn-default btn-xs pull-right">
-          Add
+          {{_ "organizationMembers-addButton" }}
         </button>
         {{/ if }}
-        <span>Members</span>
+        <span>
+          {{_ "organizationMembers-header" }}
+        </span>
       </div>
       <div class="panel-body">
         {{# if organization.memberIds }}
@@ -19,7 +21,9 @@
           {{/ each }}
         </ul>
         {{ else }}
-        <p>Organization has no members.</p>
+        <p>
+          {{_ "organizationMembers-noResultsText" }}
+        </p>
         {{/ if }}
       </div>
     </div>
