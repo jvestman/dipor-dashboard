@@ -3,7 +3,7 @@ Meteor.methods({
     // Destructure details into local variables
     const {email, organizationId} = details;
 
-    // Find user given email
+    // Find user by given email
     const userAccount = Accounts.findUserByEmail(email);
 
     // If user account does not exist, throw error
