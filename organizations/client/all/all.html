@@ -25,7 +25,9 @@
     </div>
     {{/ each }}
     {{ else }}
-    <i>No organizations found</i>
+    <i>
+      {{_ "allOrganizations-noResultsText" }}
+    </i>
     {{/ if }}
   </div>
 </template>
