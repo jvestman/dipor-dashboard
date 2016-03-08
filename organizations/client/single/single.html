@@ -13,7 +13,7 @@
           {{ description }}
         </i>
       </p>
-      {{#if currentUserIsOrganizationAdmin}}
+      {{#if organization.currentUserIsAdmin }}
       {{#unless editOrganizationMode}}
       <button class="btn btn-default btn-xs" id="editOrganizationMode">
         <span class="glyphicon glyphicon-pencil"></span>
