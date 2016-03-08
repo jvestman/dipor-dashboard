@@ -22,3 +22,18 @@ Meteor.publish("singleOrganization", function (organizationId) {
   method: "get",
   url: "api/organizations/:0"
 });
+
+Meteor.publish("organizationMembers", function (organizationId) {
+  // Get organization
+  const organization = Organizations.findOne(organizationId);
+
+  // Get organization member IDs
+  const memberIds = organization.memberIds;
+
+  if (memberIds) {
+    // Get all users from organization member IDs
+    const members = Meteor.users.find({"_id": {$in: memberIds}});
+
+    return members;
+  }
+})
