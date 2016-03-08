@@ -3,7 +3,7 @@ Template.organizationMembers.events({
     // Get reference to template instance
     const instance = Template.instance();
 
-    const organizationId = instance.data.organizationId;
+    const organizationId = instance.data.organization._id;
 
     // Show the add member modal
     Modal.show("addOrganizationMember", {organizationId});
