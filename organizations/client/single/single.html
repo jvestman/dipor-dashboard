@@ -1,15 +1,16 @@
 <template name="singleOrganization">
   <div class="container">
+    {{#if Template.subscriptionsReady}}
+    {{# with organization }}
     <div id="organization" class="col-md-8">
-      {{#if Template.subscriptionsReady}}
       <h1>
         <span class="editable" id="organizationName">
-          {{singleOrganization.name}}
+          {{ name }}
         </span>
       </h1>
       <p>
         <i class="editable" id="organizationDescription">
-          {{singleOrganization.description}}
+          {{ description }}
         </i>
       </p>
       {{#if currentUserIsOrganizationAdmin}}
@@ -30,8 +31,11 @@
       </div>
       {{/unless}}
       {{/if}}
-      {{/if}}
     </div>
-    {{> organizationMembers organizationId=organizationId }}
+    {{> organizationMembers
+      organizationId=_id
+      memberIds=memberIds }}
+    {{/ with }} <!-- /with organization -->
+    {{/if}} <!-- /if Template.subscriptionsReady -->
   </div>
 </template>
