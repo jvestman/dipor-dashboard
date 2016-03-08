@@ -10,12 +10,6 @@ Template.singleOrganization.created = function () {
 
   // Initialise reactive variable
   instance.editOrganizationMode = new ReactiveVar(false);
-
-  instance.autorun(function () {
-    if (instance.subscriptionsReady()) {
-      instance.organization = Organizations.findOne(instance.organizationId);
-    }
-  });
 };
 
 Template.singleOrganization.helpers({
@@ -23,8 +17,11 @@ Template.singleOrganization.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
+    // Get organization
+    const organization = Organizations.findOne(instance.organizationId);
+
     // Fetch organization data and pass current organization Id
-    return instance.organization;
+    return organization;
   },
   editOrganizationMode: function () {
     // Get reference to template instance
@@ -37,8 +34,11 @@ Template.singleOrganization.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
+    // Get organization
+    const organization = Organizations.findOne(instance.organizationId);
+
     // Check if current user is organization admin using collection helper
-    return instance.organization.currentUserIsAdmin();
+    return organization.currentUserIsAdmin();
   }
 });
 
