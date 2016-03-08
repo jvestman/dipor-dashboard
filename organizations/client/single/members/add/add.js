@@ -3,6 +3,8 @@ Template.addOrganizationMember.events({
     // Prevent the form from submitting
     event.preventDefault();
 
+    const email = $("#email").val();
+
     // Hide the add organization member modal
     Modal.hide("addOrganizationMember");
   }
