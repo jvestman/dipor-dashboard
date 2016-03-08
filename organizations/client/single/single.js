@@ -19,7 +19,7 @@ Template.singleOrganization.created = function () {
 };
 
 Template.singleOrganization.helpers({
-  singleOrganization: function () {
+  organization: function () {
     // Get reference to template instance
     const instance = Template.instance();
 
