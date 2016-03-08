@@ -2,6 +2,7 @@
   "addOrganizationMember-addButton": "Add",
   "addOrganizationMember-cancelButton": "Cancel",
   "addOrganizationMember-emailField-helpText": "Enter an email address for an existing user account.",
+  "addOrganizationMember-title": "Add member",
   "allOrganizations-createOrganizationButton": "Create Organization",
   "allOrganizations-Organizations": "Organizations",
   "mainLayoutNavigation-home": "Home",
