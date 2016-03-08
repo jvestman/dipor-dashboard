@@ -19,6 +19,11 @@ Meteor.methods({
       // Make sure current user is organization administrator
       if (organization.currentUserIsAdmin()){
         // Add user ID to organization member IDs array
+        Organizations.update(organizationId, {
+          $addToSet: {
+            "memberIds": userId
+          }
+        });
       }
     }
   }
