@@ -5,13 +5,6 @@ Meteor.publish("allOrganizations", function () {
   return allOrganizations;
 });
 
-/* REST API configs
-{
-  method: "get",
-  url: "api/organizations"
-}
-*/
-
 // Single organization by ID
 Meteor.publish("singleOrganization", function (organizationId) {
   // Get database cursor to a single organization
@@ -19,10 +12,3 @@ Meteor.publish("singleOrganization", function (organizationId) {
 
   return singleOrganization;
 });
-
-/* REST API configs
-{
-  method: "get",
-  url: "api/organizations/:0"
-}
-*/
