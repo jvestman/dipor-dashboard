@@ -1,1 +1,0 @@
-Api.addCollection(Organizations);
