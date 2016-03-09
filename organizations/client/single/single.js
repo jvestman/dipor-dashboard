@@ -8,103 +8,93 @@ Template.singleOrganization.created = function () {
   // Subscribe to singleOrganization publication and pass organization Id
   instance.subscribe('singleOrganization', instance.organizationId);
 
-  // Subscribe to organization member profiles
+  // Subscribe to organization members
   instance.subscribe("organizationMembers", instance.organizationId);
 
   // Initialise reactive variable
   instance.editMode = new ReactiveVar(false);
-};
-
-Template.singleOrganization.onRendered(function () {
-  // Get reference to template instance
-  const instance = this;
 
   instance.autorun(function () {
-    // Get value of edit mode reactive variable
-    const editMode = instance.editMode.get();
-
-    if (editMode) {
-      // Initialize medium editor
-      instance.organizationEditor = new MediumEditor('.editable', {
-        toolbar: false,
-        disableReturn: true,
-        disableExtraSpaces: true
-      });
-    } else {
-      if (instance.organizationEditor) {
-        // Destroy the inline editor
-        instance.organizationEditor.destroy();
-      }
+    if (instance.subscriptionsReady()) {
+      instance.organization = Organizations.findOne(instance.organizationId);
     }
   });
-});
+};
 
 Template.singleOrganization.helpers({
-  organization: function () {
+  "organization": function () {
     // Get reference to template instance
     const instance = Template.instance();
 
-    // Get organization
-    const organization = Organizations.findOne(instance.organizationId);
-
     // Fetch organization data and pass current organization Id
-    return organization;
+    return instance.organization;
   },
-  editOrganizationMode: function () {
+  "editMode": function () {
     // Get reference to template instance
     const instance = Template.instance();
 
     // Get reactive var value
     return instance.editMode.get();
+  },
+  "currentUserIsOrganizationAdmin": function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Check if current user is organization admin using collection helper
+    return instance.organization.currentUserIsAdmin();
   }
 });
 
 Template.singleOrganization.events({
-  'click #editOrganizationMode': function (event) {
+  'click #edit-organization': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
     const instance = Template.instance();
+
+    // Initialize medium editor
+    instance.organizationEditor = new MediumEditor('.editable', {
+      toolbar: false,
+      disableReturn: true,
+      disableExtraSpaces: true
+    });
 
     // Update reactive variable
     instance.editMode.set(true);
   },
-  'click #cancelEditOrganizationMode': function (event) {
+  'click #cancel-edit': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
     const instance = Template.instance();
+
+    // Get existing organization text
+    const organization = instance.organization;
+
+    // Deconstruct medium-editor
+    instance.organizationEditor.destroy();
 
     // Update reactive variable
     instance.editMode.set(false);
 
     // Reset UI text to current value
-    $('#organizationName').text(organization.name);
-    $('#organizationDescription').text(organization.description);
+    $('#organization-name').text(organization.name);
+    $('#organization-description').text(organization.description);
   },
-  'click #updateOrganization': function (event) {
+  'click #update-organization': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
     const instance = Template.instance();
 
     // Get organization reference
-    const organizationId = instance.organizationId;
-
-    // Get organization values from page
-    const organizationName = $('#organizationName').text();
-    const organizationDescription = $('#organizationDescription').text();
-
-    // Temporarily reset page text
-    // TODO: Figure out why page text duplicates without these two lines
-    $('#organizationName').text("");
-    $('#organizationDescription').text("");
+    const organizationId = instance.organizationId
 
     // Update organization data
     Organizations.update(organizationId, {
       $set: {
-        name: organizationName,
-        description: organizationDescription,
+        name: $('#organization-name').text(),
+        description: $('#organization-description').text(),
         updatedAt: new Date()
       }
     });
