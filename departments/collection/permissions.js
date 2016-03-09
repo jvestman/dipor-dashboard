@@ -4,15 +4,19 @@ Departments.allow({
     // Get organization Id
     const organizationId = department.organizationId;
 
+    const organization = Organizations.findOne(organizationId);
+
     // Only allow organization administrators to insert
-    return Organizations.findOne(organizationId).currentUserIsAdmin();
+    return organization.currentUserIsAdmin();
   },
   update: function (userId, department) {
 
     // Get organization Id
     const organizationId = department.organizationId;
 
+    const organization = Organizations.findOne(organizationId);
+
     // Only allow organization administrators to insert
-    return Organizations.findOne(organizationId).currentUserIsAdmin();
+    return organization.currentUserIsAdmin();
   }
 });
