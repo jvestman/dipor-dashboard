@@ -25,12 +25,12 @@
         <ul class="navbar navbar-nav navbar-right">
           {{# unless currentUser }}
           <a
-            href="/register"
+            href="{{ pathFor 'register'}}"
             class="btn btn-default navbar-btn">
             Register
           </a>
           <a
-            href="/login"
+            href="{{ pathFor 'signin'}}"
             class="btn btn-primary navbar-btn">
             Log in
           </a>
