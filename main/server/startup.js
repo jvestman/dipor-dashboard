@@ -1,6 +1,7 @@
 Meteor.startup(function() {
-  // Define collections exposed for REST API
-  SimpleRest.configure({
-    collections: ["organizations"]
+  // Global API configuration
+  let Api = new Restivus({
+    useDefaultAuth: false,
+    prettyJson: true
   });
 });
