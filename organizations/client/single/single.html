@@ -1,29 +1,28 @@
 <template name="singleOrganization">
   <div class="container">
-    {{#if Template.subscriptionsReady}}
-    {{# with organization }}
+  {{#if Template.subscriptionsReady}}
+  {{# with organization }}
+  <div class="page-header">
+    <h1>
+      <span class="editable" id="organizationName">
+        {{ name }}
+      </span>
+    </h1>
+  </div> <!-- /page-header -->
     <div id="organization" class="col-md-8">
-      <h1>
-        <span class="editable" id="organizationName">
-          {{ name }}
-        </span>
-      </h1>
       <p>
         <i class="editable" id="organizationDescription">
           {{ description }}
         </i>
       </p>
-      {{#if organization.currentUserIsAdmin }}
-      {{#unless editOrganizationMode}}
+      {{#if organization.currentUserIsAdmin }} {{#unless editOrganizationMode}}
       <button class="btn btn-default btn-xs" id="editOrganizationMode">
-        <span class="glyphicon glyphicon-pencil"></span>
-        Edit
+        <span class="glyphicon glyphicon-pencil"></span> Edit
       </button>
       {{else}}
       <div class="btn-group" role="group" aria-label="...">
         <button type="button" class="btn btn-success btn-xs" id="updateOrganization">
-          <span class="glyphicon glyphicon-ok"></span>
-          {{_ "singleOrganization-saveButton" }}
+          <span class="glyphicon glyphicon-ok"></span> {{_ "singleOrganization-saveButton" }}
         </button>
         <button type="button" class="btn btn-default btn-xs" id="cancelEditOrganizationMode">
           {{_ "singleOrganization-cancelButton" }}
@@ -31,9 +30,9 @@
       </div>
       {{/unless}}
       {{/if}}
-    </div>
+    </div> <!-- /#organization -->
     {{> organizationMembers organization=organization }}
-    {{/ with }} <!-- /with organization -->
-    {{/if}} <!-- /if Template.subscriptionsReady -->
-  </div>
+  {{/ with }} <!-- /with organization -->
+  {{/if}} <!-- /if Template.subscriptionsReady -->
+  </div> <!-- /.container -->
 </template>
