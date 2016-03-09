@@ -1,8 +1,8 @@
-ul, .member {
+.member {
  list-style-type: none;
 }
 
-ul .member::before {
+.member::before {
   font-family: FontAwesome;
   content: "\f007";
   margin-right: 0.5em;
