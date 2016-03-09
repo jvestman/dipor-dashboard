@@ -33,3 +33,4 @@ peppelg:bootstrap-3-modal
 aldeed:autoform
 force-ssl
 useraccounts:bootstrap
+useraccounts:flow-routing
