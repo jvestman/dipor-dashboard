@@ -17,7 +17,7 @@
       </div>
       <div class="panel-body">
         {{# if organization.memberIds }}
-        <ul>
+        <ul class="list-group">
           {{# each memberId in organization.memberIds }}
           {{> organizationMember memberId=memberId }}
           {{/ each }}
