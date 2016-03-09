@@ -2,5 +2,8 @@
   "allOrganizations-createOrganizationButton": "Create Organization",
   "allOrganizations-Organizations": "Organizations",
   "mainLayoutNavigation-home": "Home",
-  "mainLayoutNavigation-organizations": "Organizations"
+  "mainLayoutNavigation-loginButton": "Log in",
+  "mainLayoutNavigation-logoutButton": "Log out",
+  "mainLayoutNavigation-organizations": "Organizations",
+  "mainLayoutNavigation-registerButton": "Register"
 }
