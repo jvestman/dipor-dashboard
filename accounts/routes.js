@@ -1,7 +1,7 @@
 // Sign in
 AccountsTemplates.configureRoute('signIn', {
   layoutType: 'blaze',
-  name: 'signin',
+  name: 'signIn',
   path: '/login',
   //template: 'myLogin',
   layoutTemplate: 'mainLayout',
