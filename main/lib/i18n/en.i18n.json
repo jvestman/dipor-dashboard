@@ -4,7 +4,7 @@
   "mainLayoutNavigation-home": "Home",
   "mainLayoutNavigation-organizations": "Organizations",
   "singleOrganization-openCreateDepartmentModal": "Create Department",
-  "createDepartment-AddDepartment": "Add Department",
+  "createDepartment-addDepartment": "Add Department",
   "createDepartment-createDepartmentButton": "Create",
   "createDepartment-cancelCreateDepartmentButton": "Cancel"
 }
