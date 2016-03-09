@@ -14,6 +14,7 @@
   "allOrganizations-Organizations": "Organizations",
   "mainLayoutNavigation-home": "Home",
   "mainLayoutNavigation-organizations": "Organizations",
-  "singleOrganization-saveButton": "Save",
-  "singleOrganization-cancelButton": "Cancel"
+  "singleOrganization-cancelButton": "Cancel",
+  "singleOrganization-editButton": "Edit",
+  "singleOrganization-saveButton": "Save"
 }
