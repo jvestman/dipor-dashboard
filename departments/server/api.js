@@ -10,7 +10,7 @@ ApiV1.addCollection(Departments, {
 ApiV1.addRoute('organizations/:id/departments', {authRequired: true}, {
   get: function () {
     const organizationId = this.urlParams.id;
-    const departments = Departments.find({ "organizationId": organizationId });
+    const departments = Departments.find({ "organizationId": organizationId }).fetch();
 
     return departments;
   }
