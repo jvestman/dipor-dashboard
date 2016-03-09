@@ -1,21 +1,21 @@
 <template name="singleOrganization">
   <div class="container">
   {{#if Template.subscriptionsReady}}
-  {{# with organization }}
   <div class="page-header">
     <h1>
       <span class="editable" id="organizationName">
-        {{ name }}
+        {{ organization.name }}
       </span>
     </h1>
   </div> <!-- /page-header -->
     <div id="organization" class="col-md-8">
       <p>
         <i class="editable" id="organizationDescription">
-          {{ description }}
+          {{ organization.description }}
         </i>
       </p>
-      {{#if organization.currentUserIsAdmin }} {{#unless editOrganizationMode}}
+      {{#if organization.currentUserIsAdmin }}
+      {{#unless editOrganizationMode}}
       <button class="btn btn-default btn-xs" id="editOrganizationMode">
         <span class="glyphicon glyphicon-pencil"></span> Edit
       </button>
@@ -32,7 +32,6 @@
       {{/if}}
     </div> <!-- /#organization -->
     {{> organizationMembers organization=organization }}
-  {{/ with }} <!-- /with organization -->
   {{/if}} <!-- /if Template.subscriptionsReady -->
   </div> <!-- /.container -->
 </template>
