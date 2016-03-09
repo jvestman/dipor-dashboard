@@ -2,6 +2,6 @@
   "mainLayoutNavigation-home": "Home",
   "mainLayoutNavigation-organizations": "Organizations",
   "allOrganizationsView-Organizations": "Organizations",
-  "profile_Header": "Profile",
-  "profile_UpdateButton": "Update"
+  "profile-Header": "Profile",
+  "profile-UpdateButton": "Update"
 }
