@@ -1,21 +1,21 @@
 <template name="singleOrganization">
-  {{#if Template.subscriptionsReady}}
+  {{# if Template.subscriptionsReady }}
   <div class="container">
     <div class="page-header">
       <h1>
         <span class="editable" id="organization-name">
-          {{ organization.name}}
+          {{ organization.name }}
         </span>
       </h1>
     </div>
     <div id="organization" class="col-md-8">
       <p>
         <i class="editable" id="organization-description">
-          {{ organization.description}}
+          {{ organization.description }}
         </i>
       </p>
-      {{#if currentUserIsOrganizationAdmin}}
-      {{#unless editMode}}
+      {{# if currentUserIsOrganizationAdmin }}
+      {{# unless editMode }}
       <button class="btn btn-default btn-xs" id="edit-organization">
         <span class="glyphicon glyphicon-pencil"></span>
         {{_ "singleOrganization-editButton" }}
@@ -30,9 +30,9 @@
           {{_ "singleOrganization-cancelButton" }}
         </button>
       </div>
-      {{/unless}}
+      {{/ unless }} <!-- /unless editMode -->
 
-      {{/if}}
+      {{/ if }} <!-- /if currentUserIsOrganizationAdmin -->
 
     </div>
     {{> organizationMembers organization=organization }}
