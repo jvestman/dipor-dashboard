@@ -7,3 +7,13 @@ AccountsTemplates.configureRoute('signIn', {
   layoutTemplate: 'mainLayout',
   contentRegion: 'main'
 });
+
+// Register
+AccountsTemplates.configureRoute('signUp', {
+  layoutType: 'blaze',
+  name: 'register',
+  path: '/register',
+  //template: 'myLogin',
+  layoutTemplate: 'mainLayout',
+  contentRegion: 'main'
+});
