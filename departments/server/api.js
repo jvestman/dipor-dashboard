@@ -11,6 +11,7 @@ API.v1.addRoute('organizations/:id/departments', {authRequired: true}, {
   get: function () {
     // Get organizationId from URL parameters
     const organizationId = this.urlParams.id;
+    // Fetch all departments of the given organization
     const departments = Departments.find({ "organizationId": organizationId }).fetch();
 
     return departments;
