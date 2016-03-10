@@ -41,7 +41,7 @@ Describe what you saw happen, optionally including a screenshot.
 # Expected behavior
 Describe what you expected to happen
 
-#### Environment
+# Environment
 Describe the general conditions when the bug occurs
 
 - Web browser
