@@ -13,7 +13,7 @@ API.v1 = new Restivus({
   enableCors: true
 });
 
-// Generates: POST on /api/users and GET, DELETE /api/users/:id for
+// Generates: POST on /api/v1/users and GET, DELETE /api/v1/users/:id for
 // Meteor.users collection
 API.v1.addCollection(Meteor.users, {
   excludedEndpoints: ['getAll', 'put'],
