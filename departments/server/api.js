@@ -9,6 +9,7 @@ API.v1.addCollection(Departments, {
 // Maps to: /api/v1/organizations/:id/departments
 API.v1.addRoute('organizations/:id/departments', {authRequired: true}, {
   get: function () {
+    // Get organizationId from URL parameters
     const organizationId = this.urlParams.id;
     const departments = Departments.find({ "organizationId": organizationId }).fetch();
 
