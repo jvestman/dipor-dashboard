@@ -1,5 +1,8 @@
 // Global API configuration
-ApiV1 = new Restivus({
+API = {};
+
+// Version 1
+API.v1 = new Restivus({
   apiPath: 'api/',
   version: 'v1',
   defaultHeaders: {
@@ -12,7 +15,7 @@ ApiV1 = new Restivus({
 
 // Generates: POST on /api/users and GET, DELETE /api/users/:id for
 // Meteor.users collection
-ApiV1.addCollection(Meteor.users, {
+API.v1.addCollection(Meteor.users, {
   excludedEndpoints: ['getAll', 'put'],
   routeOptions: {
     authRequired: true
