@@ -35,5 +35,9 @@ Meteor.publish("organizationMembers", function (organizationId) {
     const members = Meteor.users.find({"_id": {$in: memberIds}});
 
     return members;
+  } else {
+    // Call ready with no results,
+    // so that subscription dependant code will run
+    this.ready();
   }
 })
