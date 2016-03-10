@@ -3,11 +3,6 @@ Meteor.publish("allOrganizations", function () {
   const allOrganizations = Organizations.find();
 
   return allOrganizations;
-},
-// REST API configs
-{
-  method: "get",
-  url: "api/organizations"
 });
 
 // Single organization by ID
@@ -16,11 +11,6 @@ Meteor.publish("singleOrganization", function (organizationId) {
   const singleOrganization = Organizations.find({ _id: organizationId });
 
   return singleOrganization;
-},
-// REST API configs
-{
-  method: "get",
-  url: "api/organizations/:0"
 });
 
 Meteor.publish("organizationMembers", function (organizationId) {
