@@ -28,10 +28,10 @@ mediumeditor:mediumeditor
 tap:i18n
 reactive-var
 dburles:collection-helpers
-simple:rest
 peppelg:bootstrap-3-modal
 aldeed:autoform
 force-ssl
 useraccounts:bootstrap
 useraccounts:flow-routing
 arillo:flow-router-helpers
+nimble:restivus
