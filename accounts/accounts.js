@@ -27,31 +27,7 @@ AccountsTemplates.configure({
   positiveFeedback: true,
   showValidating: true,
 
-  // Privacy Policy and Terms of Use
-  //privacyUrl: 'privacy',
-  //termsUrl: 'terms-of-use',
-
   // Redirects
   homeRoutePath: '/',
-  redirectTimeout: 4000,
-
-  // Hooks
-  //onLogoutHook: myLogoutFunc,
-  //onSubmitHook: mySubmitFunc,
-  //preSignUpHook: myPreSubmitFunc,
-  //postSignUpHook: myPostSubmitFunc,
-
-  // Texts
-  // texts: {
-  //   button: {
-  //       signUp: "Register"
-  //   },
-  //   socialSignUp: "Register",
-  //   socialIcons: {
-  //       "meteor-developer": "fa fa-rocket"
-  //   },
-  //   title: {
-  //       forgotPwd: "Recover Your Password"
-  //   },
-  // },
+  redirectTimeout: 4000
 });
