@@ -7,10 +7,12 @@ Template.organizationDepartments.created = function () {
 
   // Subscribe to allOrganizations publication
   instance.subscribe('organizationDepartments', instance.organizationId);
+  instance.subscribe('singleOrganization', instance.organizationId);
 
   instance.autorun(function () {
     if (instance.subscriptionsReady()) {
       instance.departments = Departments.find({organizationId: instance.organizationId});
+      instance.organization = Organizations.findOne(instance.organizationId);
     }
   });
 };
@@ -20,8 +22,12 @@ Template.organizationDepartments.helpers({
 
     var instance = Template.instance();
 
-    var departments = instance.departments;
+    return instance.departments;
+  },
+  organization: function () {
 
-    return departments;
+    var instance = Template.instance();
+
+    return instance.organization;
   }
 });
