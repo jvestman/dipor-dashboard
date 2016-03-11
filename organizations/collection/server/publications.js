@@ -13,15 +13,9 @@ Meteor.publish("singleOrganization", function (organizationId) {
   return singleOrganization;
 });
 
-Meteor.publish("organizationMembers", function (organizationId) {
-  // Get organization
-  const organization = Organizations.findOne(organizationId);
-
-  // Get organization member IDs
-  const memberIds = organization.memberIds;
-
+Meteor.publish("organizationMember", function (memberId) {
   // Get all users from organization member IDs
-  const members = Meteor.users.find({"_id": {$in: memberIds}});
+  const member = Meteor.users.find(memberId);
 
-  return members;
+  return member;
 });
