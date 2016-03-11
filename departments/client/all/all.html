@@ -1,0 +1,23 @@
+<template name="organizationDepartments">
+    <div class="container">
+        {{# if Template.subscriptionsReady }}
+            <h1>
+                Departments
+                {{_ "allOrganizations-header" }}
+            </h1>
+
+            {{# each department in organizationDepartments }}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a href="/depratment/{{ department._id }}">
+                            <b>{{ department.name }}</b>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        {{ department.description }}
+                    </div>
+                </div>
+            {{/ each }}
+        {{/ if }}
+    </div>
+</template>
