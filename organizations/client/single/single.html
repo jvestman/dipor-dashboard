@@ -6,22 +6,24 @@
         <span class="editable" id="organization-name">
           {{ organization.name }}
         </span>
-        {{# if currentUserIsOrganizationAdmin }}
         <div class="btn-group pull-right" role="group" aria-label="Department buttons">
+          {{# if currentUserIsOrganizationMember }}
             <a
               href="/organization/{{organization._id}}/departments"
               class="btn btn-default">
-                Departments
+              Departments
             </a>
+          {{/ if }}
+          {{# if currentUserIsOrganizationAdmin }}
             <button
-                id="create-department"
-                type="button"
-                class="btn btn-default">
+              id="create-department"
+              type="button"
+              class="btn btn-default">
               <span class="glyphicon glyphicon-plus"></span>
               {{_ "singleOrganization-createDepartmentButton" }}
             </button>
+          {{/ if }}
         </div>
-        {{/if}}
       </h1>
     </div>
     <div id="organization" class="col-md-8">
