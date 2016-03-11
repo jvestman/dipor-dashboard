@@ -7,12 +7,20 @@
           {{singleOrganization.name}}
         </span>
         {{# if currentUserIsOrganizationAdmin }}
-        <button
-          id="create-department"
-          type="button"
-          class="btn btn-default pull-right">
-            {{_ "singleOrganization-createDepartmentButton" }}
-        </button>
+        <div class="btn-group pull-right" role="group" aria-label="Department buttons">
+            <a
+              href="/organization/{{singleOrganization._id}}/departments"
+              class="btn btn-default">
+                Departments
+            </a>
+            <button
+                id="create-department"
+                type="button"
+                class="btn btn-default">
+              <span class="glyphicon glyphicon-plus"></span>
+              {{_ "singleOrganization-createDepartmentButton" }}
+            </button>
+        </div>
         {{/if}}
       </h1>
       <p>
