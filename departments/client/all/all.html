@@ -2,7 +2,7 @@
   <div class="container">
     {{# if Template.subscriptionsReady }}
       <ol class="breadcrumb">
-        <li><a href="">Organization</a></li>
+        <li><a href="/organization/{{organization._id}}">{{organization.name}}</a></li>
         <li class="active">Departments</li>
       </ol>
       {{# if organizationDepartments.count }}
