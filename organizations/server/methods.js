@@ -17,7 +17,7 @@ Meteor.methods({
       const organization = Organizations.findOne(organizationId);
 
       // Make sure current user is organization administrator
-      if (organization.currentUserIsAdmin()){
+      if ( organization.currentUserIsAdmin() ) {
         // Add user ID to organization member IDs array
         Organizations.update(organizationId, {
           $addToSet: {
