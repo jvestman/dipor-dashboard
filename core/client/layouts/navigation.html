@@ -22,22 +22,27 @@
             <a href="/organizations">{{_ "mainLayoutNavigation-organizations"}}</a>
           </li>
         </ul>
-        <ul class="navbar navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
           {{# unless currentUser }}
           <a
-            href="{{ pathFor 'register'}}"
-            class="btn btn-default navbar-btn">
+             href="{{ pathFor 'register'}}"
+             class="btn btn-default navbar-btn">
             {{_ "mainLayoutNavigation-registerButton" }}
           </a>
           <a
-            href="{{ pathFor 'signin'}}"
-            class="btn btn-primary navbar-btn">
+             href="{{ pathFor 'signin'}}"
+             class="btn btn-primary navbar-btn">
             {{_ "mainLayoutNavigation-loginButton" }}
           </a>
           {{ else }}
+          <li>
+            <a href="{{ pathFor 'profile' }}">
+              {{_ "mainLayoutNavigation-profileLink" }}
+            </a>
+          </li>
           <button
-            id="log-out"
-            class="btn btn-default navbar-btn">
+                  id="log-out"
+                  class="btn btn-default navbar-btn">
             {{_ "mainLayoutNavigation-logoutButton" }}
           </button>
           {{/ unless }}
