@@ -23,12 +23,8 @@ Template.singleOrganization.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
-    const organization = Organizations.findOne(instance.organizationId)
-    // Fetch organization data and pass current organization Id
-    return organization;
-
     // Original code to get instance organization variable
-    //return instance.organization;
+    return instance.organization;
   },
   "editMode": function () {
     // Get reference to template instance
