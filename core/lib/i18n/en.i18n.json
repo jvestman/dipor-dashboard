@@ -8,6 +8,9 @@
   "mainLayoutNavigation-loginButton": "Log in",
   "mainLayoutNavigation-logoutButton": "Log out",
   "mainLayoutNavigation-organizations": "Organizations",
+  "mainLayoutNavigation-profileLink": "Profile",
   "mainLayoutNavigation-registerButton": "Register",
+  "profile-Header": "Profile",
+  "profile-UpdateButton": "Update",
   "singleOrganization-createDepartmentButton": "Create Department"
 }
