@@ -9,7 +9,7 @@ Template.singleOrganization.created = function () {
   instance.subscribe('singleOrganization', instance.organizationId);
 
   // Initialise reactive variable
-  instance.editOrganizationMode = new ReactiveVar(false);
+  instance.editMode = new ReactiveVar(false);
 
   instance.autorun(function () {
     if (instance.subscriptionsReady()) {
@@ -19,21 +19,21 @@ Template.singleOrganization.created = function () {
 };
 
 Template.singleOrganization.helpers({
-  singleOrganization: function () {
+  "organization": function () {
     // Get reference to template instance
     const instance = Template.instance();
 
-    // Fetch organization data and pass current organization Id
+    // Original code to get instance organization variable
     return instance.organization;
   },
-  editOrganizationMode: function () {
+  "editMode": function () {
     // Get reference to template instance
     const instance = Template.instance();
 
     // Get reactive var value
-    return instance.editOrganizationMode.get();
+    return instance.editMode.get();
   },
-  currentUserIsOrganizationAdmin: function () {
+  "currentUserIsOrganizationAdmin": function () {
     // Get reference to template instance
     const instance = Template.instance();
 
@@ -43,7 +43,7 @@ Template.singleOrganization.helpers({
 });
 
 Template.singleOrganization.events({
-  'click #editOrganizationMode': function (event) {
+  'click #edit-organization': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
@@ -57,9 +57,9 @@ Template.singleOrganization.events({
     });
 
     // Update reactive variable
-    instance.editOrganizationMode.set(true);
+    instance.editMode.set(true);
   },
-  'click #cancelEditOrganizationMode': function (event) {
+  'click #cancel-edit': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
@@ -72,13 +72,13 @@ Template.singleOrganization.events({
     instance.organizationEditor.destroy();
 
     // Update reactive variable
-    instance.editOrganizationMode.set(false);
+    instance.editMode.set(false);
 
     // Reset UI text to current value
-    $('#organizationName').text(organization.name);
-    $('#organizationDescription').text(organization.description);
+    $('#organization-name').text(organization.name);
+    $('#organization-description').text(organization.description);
   },
-  'click #updateOrganization': function (event) {
+  'click #update-organization': function (event) {
     event.preventDefault();
 
     // Get reference to template instance
@@ -90,8 +90,8 @@ Template.singleOrganization.events({
     // Update organization data
     Organizations.update(organizationId, {
       $set: {
-        name: $('#organizationName').text(),
-        description: $('#organizationDescription').text(),
+        name: $('#organization-name').text(),
+        description: $('#organization-description').text(),
         updatedAt: new Date()
       }
     });
@@ -100,7 +100,7 @@ Template.singleOrganization.events({
     instance.organizationEditor.destroy();
 
     // Update reactive variable
-    instance.editOrganizationMode.set(false);
+    instance.editMode.set(false);
   },
   'click #create-department': function (event) {
 

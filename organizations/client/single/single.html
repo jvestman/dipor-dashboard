@@ -1,10 +1,10 @@
 <template name="singleOrganization">
+  {{# if Template.subscriptionsReady }}
   <div class="container">
-    <div id="organization">
-      {{#if Template.subscriptionsReady}}
+    <div class="page-header">
       <h1>
-        <span class="editable" id="organizationName">
-          {{singleOrganization.name}}
+        <span class="editable" id="organization-name">
+          {{ organization.name }}
         </span>
         {{# if currentUserIsOrganizationAdmin }}
         <button
@@ -15,30 +15,35 @@
         </button>
         {{/if}}
       </h1>
+    </div>
+    <div id="organization" class="col-md-8">
       <p>
-        <i class="editable" id="organizationDescription">
-          {{singleOrganization.description}}
+        <i class="editable" id="organization-description">
+          {{ organization.description }}
         </i>
       </p>
-      {{#if currentUserIsOrganizationAdmin}}
-      {{#unless editOrganizationMode}}
-      <button class="btn btn-default btn-xs" id="editOrganizationMode">
+      {{# if currentUserIsOrganizationAdmin }}
+      {{# unless editMode }}
+      <button class="btn btn-default btn-xs" id="edit-organization">
         <span class="glyphicon glyphicon-pencil"></span>
-        Edit
+        {{_ "singleOrganization-editButton" }}
       </button>
       {{else}}
       <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-success btn-xs" id="updateOrganization">
+        <button type="button" class="btn btn-success btn-xs" id="update-organization">
           <span class="glyphicon glyphicon-ok"></span>
-          Save
+          {{_ "singleOrganization-saveButton" }}
         </button>
-        <button type="button" class="btn btn-default btn-xs" id="cancelEditOrganizationMode">
-          Cancel
+        <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
+          {{_ "singleOrganization-cancelButton" }}
         </button>
       </div>
-      {{/unless}}
-      {{/if}}
-      {{/if}}
+      {{/ unless }} <!-- /unless editMode -->
+
+      {{/ if }} <!-- /if currentUserIsOrganizationAdmin -->
+
     </div>
+    {{> organizationMembers organizationId=organization._id }}
   </div>
+  {{/if}} <!-- /#if Template.subscriptionsReady -->
 </template>
