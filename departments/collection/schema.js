@@ -3,6 +3,9 @@ Departments.schema = new SimpleSchema({
   "name": {
     "type": String
   },
+  "description": {
+    "type": String
+  },
   "organizationId": {
     "type": String,
     "regEx": SimpleSchema.RegEx.Id

@@ -1,0 +1,50 @@
+> Use this section for feature request.
+
+# Feature title
+Briefly describe feature
+
+# User story
+Include at least one user story for any feature.
+
+```
+As a registered user
+I need a widget on the page
+so that I have something to click
+```
+
+# Wireframe
+Include a monochrome diagram of the desired design
+
+# Definition of Done
+Include criteria describing what the feature will look like when completed
+- [ ] Widget appears on page
+- [ ] User can click on widget
+
+**Note:** Some of the above details will be added during the feature discovery and planning process.
+
+---
+
+> Use this section for a bug report
+
+# Short bug title
+Briefly describe the bug
+
+# Steps to reproduce
+Help developers reproduce the bug by providing specific steps to follow
+
+1. View the page
+2. Click the widget
+
+# Observed behavior
+Describe what you saw happen, optionally including a screenshot.
+
+# Expected behavior
+Describe what you expected to happen
+
+# Environment
+Describe the general conditions when the bug occurs
+
+- Web browser
+- Operating system
+
+**Note:** Some of the above details will be added during the discussion and testing process.
