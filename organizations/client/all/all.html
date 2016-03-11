@@ -1,0 +1,31 @@
+<template name="allOrganizations">
+  <div class="container">
+    <h1>
+      {{# if currentUser }}
+      <button
+        id="create-organization"
+        type="button"
+        class="btn btn-default pull-right">
+        {{_ "allOrganizations-createOrganizationButton" }}
+      </button>
+      {{/ if }}
+      {{_ "allOrganizations-Organizations" }}
+    </h1>
+    {{# if allOrganizations.count }}
+    {{# each organization in allOrganizations }}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="/organization/{{ organization._id }}">
+          <b>{{ organization.name }}</b>
+        </a>
+      </div>
+      <div class="panel-body">
+        {{ organization.description }}
+      </div>
+    </div>
+    {{/ each }}
+    {{ else }}
+    <i>No organizations found</i>
+    {{/ if }}
+  </div>
+</template>
