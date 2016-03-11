@@ -101,5 +101,10 @@ Template.singleOrganization.events({
 
     // Update reactive variable
     instance.editMode.set(false);
+  },
+  'click #create-department': function (event) {
+
+    // Show create department modal
+    Modal.show('createDepartment');
   }
 });

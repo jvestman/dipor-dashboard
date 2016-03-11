@@ -32,4 +32,7 @@ peppelg:bootstrap-3-modal
 aldeed:autoform
 force-ssl
 fortawesome:fontawesome
+useraccounts:bootstrap
+useraccounts:flow-routing
+arillo:flow-router-helpers
 nimble:restivus
