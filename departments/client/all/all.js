@@ -22,8 +22,6 @@ Template.organizationDepartments.helpers({
 
     var departments = instance.departments;
 
-    console.log(departments)
-
     return departments;
   }
 });
