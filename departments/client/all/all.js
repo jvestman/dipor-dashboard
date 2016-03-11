@@ -1,6 +1,6 @@
 Template.organizationDepartments.created = function () {
   // Get reference to template instance
-  var instance = this;
+  const instance = this;
 
   // Get current organization Id
   instance.organizationId = FlowRouter.current().params.organizationId;
@@ -20,13 +20,13 @@ Template.organizationDepartments.created = function () {
 Template.organizationDepartments.helpers({
   organizationDepartments: function () {
 
-    var instance = Template.instance();
+    const instance = Template.instance();
 
     return instance.departments;
   },
   organization: function () {
 
-    var instance = Template.instance();
+    const instance = Template.instance();
 
     return instance.organization;
   }
