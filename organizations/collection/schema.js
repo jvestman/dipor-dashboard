@@ -18,6 +18,22 @@ Organizations.schema = new SimpleSchema({
     "regEx": SimpleSchema.RegEx.Id,
     "optional": true
   },
+  "memberIds": {
+    "type": [String],
+    "autoValue": function () {
+      // Check if field is already set
+      if (this.isInsert ) {
+        // If not set, add current user ID to memberIds array
+        const memberIdArray = [ Meteor.userId() ];
+
+        return memberIdArray;
+      }
+    }
+  },
+  "memberIds.$": {
+    "type": String,
+    "regEx": SimpleSchema.RegEx.Id
+  },
   "createdAt": {
     "type": Date,
     "optional": true,
