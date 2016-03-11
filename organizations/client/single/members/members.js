@@ -4,10 +4,6 @@ Template.organizationMembers.onCreated(function(){
 
   // Get organization Id that was passed to a template
   instance.organizationId = instance.data.organizationId;
-
-  // Subscribe to organization members
-  instance.subscribe("organizationMembers", instance.organizationId);
-  
 });
 
 Template.organizationMembers.events({
