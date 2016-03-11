@@ -26,7 +26,7 @@ Template.organizationMembers.helpers({
     // Get reference to a template instance
     const instance = Template.instance();
 
-    // Return organization with provided otganization Id
+    // Return organization with provided organization Id
     return Organizations.findOne(instance.organizationId);
   }
 });
