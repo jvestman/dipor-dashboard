@@ -1,10 +1,9 @@
-Template.organizationMember.onCreated(function(){
+Template.organizationMembers.onCreated(function(){
   // Get reference to template instance
   const instance = this;
 
-  // Get current organization Id
-  instance.organizationId = FlowRouter.current().params.organizationId;
-  
+  instance.organizationId = instance.data.organization._id;
+
   // Subscribe to organization members
   instance.subscribe("organizationMembers", instance.organizationId);
 });
@@ -14,7 +13,7 @@ Template.organizationMembers.events({
     // Get reference to template instance
     const instance = Template.instance();
 
-    const organizationId = instance.data.organization._id;
+    const organizationId = instance.organizationId;
 
     // Show the add member modal
     Modal.show("addOrganizationMember", {organizationId});
