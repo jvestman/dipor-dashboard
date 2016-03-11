@@ -1,6 +1,13 @@
 {
   "allOrganizations-createOrganizationButton": "Create Organization",
-  "allOrganizations-Organizations": "Organizations",
+  "allOrganizations-header": "Organizations",
+  "createDepartment-addDepartment": "Add Department",
+  "createDepartment-createDepartmentButton": "Create",
+  "createDepartment-cancelCreateDepartmentButton": "Cancel",
   "mainLayoutNavigation-home": "Home",
-  "mainLayoutNavigation-organizations": "Organizations"
+  "mainLayoutNavigation-loginButton": "Log in",
+  "mainLayoutNavigation-logoutButton": "Log out",
+  "mainLayoutNavigation-organizations": "Organizations",
+  "mainLayoutNavigation-registerButton": "Register",
+  "singleOrganization-createDepartmentButton": "Create Department"
 }

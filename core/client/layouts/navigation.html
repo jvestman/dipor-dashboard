@@ -23,7 +23,24 @@
           </li>
         </ul>
         <ul class="navbar navbar-nav navbar-right">
-          {{> loginButtons align="right"}}
+          {{# unless currentUser }}
+          <a
+            href="{{ pathFor 'register'}}"
+            class="btn btn-default navbar-btn">
+            {{_ "mainLayoutNavigation-registerButton" }}
+          </a>
+          <a
+            href="{{ pathFor 'signin'}}"
+            class="btn btn-primary navbar-btn">
+            {{_ "mainLayoutNavigation-loginButton" }}
+          </a>
+          {{ else }}
+          <button
+            id="log-out"
+            class="btn btn-default navbar-btn">
+            {{_ "mainLayoutNavigation-logoutButton" }}
+          </button>
+          {{/ unless }}
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
