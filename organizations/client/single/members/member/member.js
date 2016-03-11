@@ -14,17 +14,15 @@ Template.organizationMember.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
-    if (instance.subscriptionsReady) {
-      const member = Meteor.users.findOne(instance.memberId);
+    const member = Meteor.users.findOne(instance.memberId);
 
-      // Make sure member is available,
-      // since Meteor.users.findOne may return an empty array
-      if (member) {
-        // Get primary member email address
-        const memberEmail = member.emails[0].address;
+    // Make sure member is available,
+    // since Meteor.users.findOne may return an empty array
+    if (member) {
+      // Get primary member email address
+      const memberEmail = member.emails[0].address;
 
-        return memberEmail;
-      }
+      return memberEmail;
     }
   }
 });
