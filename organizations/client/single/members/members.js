@@ -6,6 +6,10 @@ Template.organizationMembers.onCreated(function(){
 
   // Subscribe to organization members
   instance.subscribe("organizationMembers", instance.organizationId);
+
+  instance.autorun(function () {
+    console.log(instance.data.organization);
+  });
 });
 
 Template.organizationMembers.events({
