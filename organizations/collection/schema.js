@@ -22,7 +22,7 @@ Organizations.schema = new SimpleSchema({
     "type": [String],
     "autoValue": function () {
       // Check if field is already set
-      if (! this.isSet ) {
+      if (this.isInsert ) {
         // If not set, add current user ID to memberIds array
         const memberIdArray = [ Meteor.userId() ];
 
