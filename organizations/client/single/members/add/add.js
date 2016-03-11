@@ -3,20 +3,18 @@ Template.addOrganizationMember.events({
     // Prevent the form from submitting
     event.preventDefault();
 
-    // Create object to hold details for current submission
-    const details = {};
-
     // Get reference to template instance
     const instance = Template.instance();
 
-    const organizationId = instance.data.organizationId;
+    // Create object to hold details for current submission
+    const details = {};
 
-    // Get email from form
+    // Add Organization ID to details object
+    details.organizationId = instance.data.organizationId;
+
+    // Add email to details object
     details.email = $("#email").val();
 
-    // Add organization ID
-    details.organizationId = organizationId;
-    
     // Add member to organization, checking if email is registered
     Meteor.call("addOrganizationMember", details, function (error, success) {
       if (error) {
