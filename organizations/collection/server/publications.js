@@ -20,14 +20,8 @@ Meteor.publish("organizationMembers", function (organizationId) {
   // Get organization member IDs
   const memberIds = organization.memberIds;
 
-  if (memberIds) {
-    // Get all users from organization member IDs
-    const members = Meteor.users.find({"_id": {$in: memberIds}});
+  // Get all users from organization member IDs
+  const members = Meteor.users.find({"_id": {$in: memberIds}});
 
-    return members;
-  } else {
-    // Call ready with no results,
-    // so that subscription dependant code will run
-    this.ready();
-  }
-})
+  return members;
+});
