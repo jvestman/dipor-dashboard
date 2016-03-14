@@ -24,9 +24,9 @@
               {{/ each }}
             </ul>
           {{ else }}
-            <p>
-              {{_ "singleOrganization-noDepartmentsFound" }}
-            </p>
+            <div class="blank-state jumbotron">
+              <i>{{_ "singleOrganization-noDepartmentsFound" }}</i>
+            </div>
           {{/ if }}
       </div> <!-- /.panel-body -->
     </div>
