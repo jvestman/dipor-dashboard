@@ -6,13 +6,6 @@
         <span class="editable" id="organization-name">
           {{ organization.name }}
         </span>
-        {{# if currentUserIsOrganizationMember }}
-          <a
-            href="/organization/{{organization._id}}/departments"
-            class="btn btn-default pull-right">
-            Departments
-          </a>
-        {{/ if }}
       </h1>
     </div>
     <div id="organization" class="col-md-8">
@@ -21,7 +14,7 @@
           {{ organization.description }}
         </i>
       </p>
-      {{# if currentUserIsOrganizationAdmin }}
+      {{# if organization.currentUserIsAdmin }}
       {{# unless editMode }}
       <button class="btn btn-default btn-xs" id="edit-organization">
         <span class="glyphicon glyphicon-pencil"></span>
