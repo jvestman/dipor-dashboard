@@ -1,5 +1,5 @@
 Organizations.helpers({
-  currentUserIsAdmin: function () {
+  "currentUserIsAdmin": function () {
     // Assign organization instance to a variable
     const organization = this;
 

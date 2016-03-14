@@ -12,3 +12,10 @@ Meteor.publish("singleOrganization", function (organizationId) {
 
   return singleOrganization;
 });
+
+Meteor.publish("organizationMember", function (memberId) {
+  // Get all users from organization member IDs
+  const member = Meteor.users.find(memberId);
+
+  return member;
+});
