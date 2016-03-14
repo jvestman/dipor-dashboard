@@ -18,16 +18,31 @@ Template.organizationDepartments.created = function () {
 };
 
 Template.organizationDepartments.helpers({
-  organizationDepartments: function () {
+  'organizationDepartments': function () {
 
     const instance = Template.instance();
 
     return instance.departments;
   },
-  organization: function () {
+  'organization': function () {
 
     const instance = Template.instance();
 
     return instance.organization;
-  }
+  },
+  'currentUserIsOrganizationAdmin': function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Check if current user is organization admin using collection helper
+    return instance.organization.currentUserIsAdmin();
+  },
 });
+
+Template.organizationDepartments.events({
+  'click #create-department': function (event) {
+
+    // Show create department modal
+    Modal.show('createDepartment');
+  }
+})
