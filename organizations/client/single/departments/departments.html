@@ -1,0 +1,34 @@
+<template name="organizationDepartments">
+  {{# if Template.subscriptionsReady }}
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        {{# if organization.currentUserIsAdmin }}
+          <button
+            id="create-department"
+            class="btn btn-default btn-xs pull-right">
+            Create
+          </button>
+        {{/ if }}
+        <span>
+          <i class="fa fa-list-ul"></i>
+          Departments
+        </span>
+      </div>
+      <div class="panel-body">
+          {{# if organizationDepartments.count }}
+            <ul class="list-group">
+              {{# each department in organizationDepartments }}
+                <a href="#" class="list-group-item">
+                  {{ department.name }}
+                </a>
+              {{/ each }}
+            </ul>
+          {{ else }}
+            <p>
+              No departments found.
+            </p>
+          {{/ if }}
+      </div> <!-- /.panel-body -->
+    </div>
+  {{/ if }}
+</template>
