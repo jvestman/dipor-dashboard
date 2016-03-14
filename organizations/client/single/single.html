@@ -37,7 +37,9 @@
     </div>
     <div class="col-md-4">
       {{> organizationMembers organizationId=organization._id }}
-      {{> organizationDepartments organizationId=organization._id }}
+      {{# if organization.currentUserIsMember }}
+        {{> organizationDepartments organizationId=organization._id }}
+      {{/ if}}
     </div>
   </div>
   {{/if}} <!-- /#if Template.subscriptionsReady -->
