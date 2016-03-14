@@ -11,7 +11,11 @@ Template.organizationDepartments.created = function () {
 
   instance.autorun(function () {
     if (instance.subscriptionsReady()) {
+
+      // Get all departments for particular organization
       instance.departments = Departments.find({organizationId: instance.organizationId});
+
+      // Get organization
       instance.organization = Organizations.findOne(instance.organizationId);
     }
   });
@@ -20,12 +24,14 @@ Template.organizationDepartments.created = function () {
 Template.organizationDepartments.helpers({
   'organizationDepartments': function () {
 
+    // Get reference to template instance
     const instance = Template.instance();
 
     return instance.departments;
   },
   'organization': function () {
 
+    // Get reference to template instance
     const instance = Template.instance();
 
     return instance.organization;
