@@ -6,12 +6,12 @@
           <button
             id="create-department"
             class="btn btn-default btn-xs pull-right">
-            Create
+            {{_ "singleOrganization-createDepartmentButton" }}
           </button>
         {{/ if }}
         <span>
           <i class="fa fa-list-ul"></i>
-          Departments
+          {{_ "singleOrganization-departments" }}
         </span>
       </div>
       <div class="panel-body">
@@ -25,7 +25,7 @@
             </ul>
           {{ else }}
             <p>
-              No departments found.
+              {{_ "singleOrganization-noDepartmentsFound" }}
             </p>
           {{/ if }}
       </div> <!-- /.panel-body -->

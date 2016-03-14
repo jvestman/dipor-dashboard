@@ -27,5 +27,7 @@
   "singleOrganization-cancelButton": "Cancel",
   "singleOrganization-editButton": "Edit",
   "singleOrganization-saveButton": "Save",
-  "singleOrganization-createDepartmentButton": "Create Department"
+  "singleOrganization-createDepartmentButton": "Create",
+  "singleOrganization-departments": "Departments",
+  "singleOrganization-noDepartmentsFound": "No departments found",
 }
