@@ -32,12 +32,6 @@ Template.singleOrganization.helpers({
 
     // Get reactive var value
     return instance.editMode.get();
-  },
-  "currentUserIsOrganizationMember": function () {
-    // Get reference to template instance
-    const instance = Template.instance();
-
-    return instance.organization.currentUserIsMember()
   }
 });
 
