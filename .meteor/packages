@@ -38,3 +38,7 @@ useraccounts:flow-routing
 arillo:flow-router-helpers
 nimble:restivus
 apinf:restivus-swagger
+sanjo:jasmine
+velocity:html-reporter
+xolvio:template-isolator
+check
