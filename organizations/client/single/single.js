@@ -32,13 +32,6 @@ Template.singleOrganization.helpers({
 
     // Get reactive var value
     return instance.editMode.get();
-  },
-  "currentUserIsOrganizationAdmin": function () {
-    // Get reference to template instance
-    const instance = Template.instance();
-
-    // Check if current user is organization admin using collection helper
-    return instance.organization.currentUserIsAdmin();
   }
 });
 
@@ -101,10 +94,5 @@ Template.singleOrganization.events({
 
     // Update reactive variable
     instance.editMode.set(false);
-  },
-  'click #create-department': function (event) {
-
-    // Show create department modal
-    Modal.show('createDepartment');
   }
 });

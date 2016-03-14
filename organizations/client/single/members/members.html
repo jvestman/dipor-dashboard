@@ -1,35 +1,33 @@
 <template name="organizationMembers">
-  <div id="organization-members" class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading clearfix">
-        {{# if organization.currentUserIsAdmin }}
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      {{# if organization.currentUserIsAdmin }}
         <button
           id="add-member"
           class="btn btn-default btn-xs pull-right">
           <i class="fa fa-user"></i>&nbsp;
           {{_ "organizationMembers-addButton" }}
         </button>
-        {{/ if }}
-        <span>
+      {{/ if }}
+      <span>
           <i class="fa fa-users"></i>&nbsp;
-          {{_ "organizationMembers-header" }}
+        {{_ "organizationMembers-header" }}
         </span>
-      </div>
-      <div class="panel-body">
-        {{# if Template.subscriptionsReady }}
-        {{# if organization.memberIds }}
-        <ul class="list-group">
-          {{# each memberId in organization.memberIds }}
-          {{> organizationMember memberId=memberId }}
-          {{/ each }}
-        </ul>
-        {{ else }}
-        <p>
-          {{_ "organizationMembers-noResultsText" }}
-        </p>
-        {{/ if }}
-        {{/ if }}
-      </div> <!-- /.panel-body -->
     </div>
+    <div class="panel-body">
+      {{# if Template.subscriptionsReady }}
+        {{# if organization.memberIds }}
+          <ul class="list-group">
+            {{# each memberId in organization.memberIds }}
+              {{> organizationMember memberId=memberId }}
+            {{/ each }}
+          </ul>
+        {{ else }}
+          <div class="blank-state jumbotron">
+            <i>{{_ "organizationMembers-noResultsText" }}</i>
+          </div>
+        {{/ if }}
+      {{/ if }}
+    </div> <!-- /.panel-body -->
   </div>
 </template>
