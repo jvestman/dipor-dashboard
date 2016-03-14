@@ -36,11 +36,40 @@ API.v1.addCollection(Meteor.users, {
     authRequired: true
   },
   endpoints: {
+    get: {
+      swagger: {
+        description: "Returns user with given ID.",
+        responses: {
+          "200": {
+            description: "One user."
+          }
+        }
+      }
+    },
     post: {
-      authRequired: false
+      authRequired: false,
+      swagger: {
+        description: "Add user.",
+        responses: {
+          "200": {
+            description: "Return user that was added."
+          }
+        }
+      }
     },
     delete: {
-      roleRequired: 'admin'
+      roleRequired: 'admin',
+      swagger: {
+        description: "Delete user.",
+        responses: {
+          "200": {
+            description: "Successful delete."
+          }
+        }
+      }
     }
   }
 });
+
+// Generate Swagger to route /api/v1/swagger.json
+API.v1.addSwagger('swagger.json');
