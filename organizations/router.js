@@ -11,10 +11,3 @@ FlowRouter.route('/organization/:organizationId', {
     BlazeLayout.render("mainLayout", { main: "singleOrganization" });
   }
 });
-
-FlowRouter.route('/organization/:organizationId/departments', {
-  name: 'organizationDepartments',
-  action: function (params) {
-    BlazeLayout.render("mainLayout", { main: "organizationDepartments" });
-  }
-});
