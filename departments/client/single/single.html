@@ -2,8 +2,8 @@
   {{# if Template.subscriptionsReady }}
   <div class="container">
     <ol class="breadcrumb">
-      <li><a href="/organizations">Organizations</a></li>
-      <li><a href="/organiation/{{ organization._id }}">{{ organization.name }}</a></li>
+      <li><a href="/organizations">{{_ "singleDepartment-breadcrumb-organizations" }}</a></li>
+      <li><a href="/organization/{{ organization._id }}">{{ organization.name }}</a></li>
       <li class="active">{{ department.name }}</li>
     </ol>
     <div class="page-header">
@@ -21,7 +21,7 @@
       </p>
     </div>
     <div class="col-md-4">
-
+      <!-- TODO: add department members view-->
     </div>
   </div>
   {{/if}} <!-- /#if Template.subscriptionsReady -->
