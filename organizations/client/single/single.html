@@ -42,7 +42,9 @@
       {{/ if }} <!-- /if currentUserIsOrganizationAdmin -->
 
     </div>
-    {{> organizationMembers organizationId=organization._id }}
+    <div class="col-md-4">
+      {{> organizationMembers organizationId=organization._id }}
+    </div>
   </div>
   {{/if}} <!-- /#if Template.subscriptionsReady -->
 </template>
