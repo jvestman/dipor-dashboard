@@ -6,14 +6,6 @@
         <span class="editable" id="organization-name">
           {{ organization.name }}
         </span>
-        {{# if currentUserIsOrganizationAdmin }}
-        <button
-          id="create-department"
-          type="button"
-          class="btn btn-default pull-right">
-            {{_ "singleOrganization-createDepartmentButton" }}
-        </button>
-        {{/if}}
       </h1>
     </div>
     <div id="organization" class="col-md-8">
@@ -22,7 +14,7 @@
           {{ organization.description }}
         </i>
       </p>
-      {{# if currentUserIsOrganizationAdmin }}
+      {{# if organization.currentUserIsAdmin }}
       {{# unless editMode }}
       <button class="btn btn-default btn-xs" id="edit-organization">
         <span class="glyphicon glyphicon-pencil"></span>
@@ -43,7 +35,12 @@
       {{/ if }} <!-- /if currentUserIsOrganizationAdmin -->
 
     </div>
-    {{> organizationMembers organizationId=organization._id }}
+    <div class="col-md-4">
+      {{> organizationMembers organizationId=organization._id }}
+      {{# if organization.currentUserIsMember }}
+        {{> organizationDepartments organization=organization }}
+      {{/ if}}
+    </div>
   </div>
   {{/if}} <!-- /#if Template.subscriptionsReady -->
 </template>
