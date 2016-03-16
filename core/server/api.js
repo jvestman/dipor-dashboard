@@ -8,7 +8,7 @@ API.v1 = new Restivus({
   defaultHeaders: {
     'Content-Type': 'application/json'
   },
-  useDefaultAuth: true,
+  useDefaultAuth: false,
   prettyJson: true,
   enableCors: true,
   swagger: {
@@ -28,48 +28,51 @@ API.v1 = new Restivus({
   }
 });
 
-// Generates: POST on /api/v1/users and GET, DELETE /api/v1/users/:id for
-// Meteor.users collection
-API.v1.addCollection(Meteor.users, {
-  excludedEndpoints: ['getAll', 'put'],
-  routeOptions: {
-    authRequired: true
-  },
-  endpoints: {
-    get: {
-      swagger: {
-        description: "Returns user with given ID.",
-        responses: {
-          "200": {
-            description: "One user."
+// Enable user endpoints if authentication is enabled
+if(API.v1._config.useDefaultAuth) {
+  // Generates: POST on /api/v1/users and GET, DELETE /api/v1/users/:id for
+  // Meteor.users collection
+  API.v1.addCollection(Meteor.users, {
+    excludedEndpoints: ['getAll', 'put'],
+    routeOptions: {
+      authRequired: true
+    },
+    endpoints: {
+      get: {
+        swagger: {
+          description: "Returns user with given ID.",
+          responses: {
+            "200": {
+              description: "One user."
+            }
           }
         }
-      }
-    },
-    post: {
-      authRequired: false,
-      swagger: {
-        description: "Add user.",
-        responses: {
-          "200": {
-            description: "Return user that was added."
+      },
+      post: {
+        authRequired: false,
+        swagger: {
+          description: "Add user.",
+          responses: {
+            "200": {
+              description: "Return user that was added."
+            }
           }
         }
-      }
-    },
-    delete: {
-      roleRequired: 'admin',
-      swagger: {
-        description: "Delete user.",
-        responses: {
-          "200": {
-            description: "Successful delete."
+      },
+      delete: {
+        roleRequired: 'admin',
+        swagger: {
+          description: "Delete user.",
+          responses: {
+            "200": {
+              description: "Successful delete."
+            }
           }
         }
       }
     }
-  }
-});
+  });
+}
 
 // Generate Swagger to route /api/v1/swagger.json
 API.v1.addSwagger('swagger.json');
