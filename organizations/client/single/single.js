@@ -84,8 +84,7 @@ Template.singleOrganization.events({
     Organizations.update(organizationId, {
       $set: {
         name: $('#organization-name').text(),
-        description: $('#organization-description').text(),
-        updatedAt: new Date()
+        description: $('#organization-description').text()
       }
     });
 
