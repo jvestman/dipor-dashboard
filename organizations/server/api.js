@@ -2,7 +2,7 @@
 // /api/v1/organizations/:id for the Organizations collection
 API.v1.addCollection(Organizations, {
   routeOptions: {
-    authRequired: true
+    authRequired: false
   },
   endpoints: {
     get: {

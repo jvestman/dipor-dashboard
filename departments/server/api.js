@@ -2,7 +2,7 @@
 // /api/v1/departments/:id for the Departments collection
 API.v1.addCollection(Departments, {
   routeOptions: {
-    authRequired: true
+    authRequired: false
   },
   endpoints: {
     get: {
@@ -59,7 +59,7 @@ API.v1.addCollection(Departments, {
 });
 
 // Maps to: /api/v1/organizations/:id/departments
-API.v1.addRoute('organizations/:id/departments', {authRequired: true}, {
+API.v1.addRoute('organizations/:id/departments', {authRequired: false}, {
   get: {
     swagger: {
       description: "Returns all departments of given organization ID.",
