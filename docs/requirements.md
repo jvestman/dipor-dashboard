@@ -39,7 +39,7 @@ organization view for each of these):
 ### Department view (registered user, who is a member of the organization in question)
 * user must be able to filter view according to service status / phase
 
-### Service view (registered user, who is a member of the organization in question)
+### Service detail view (registered user, who is a member of the organization in question)
 * Note: At some point, part of the data can be requested through Digipalvelutehdas API
 * Buttons for sharing through social media
 * Service name
@@ -57,28 +57,23 @@ organization view for each of these):
 * registered users can comment the service view (also if they are outside organization)
 * Change history as a list (time and title of change, same logic as in Github commit change history)
 
-### Service information view (registered user)
+### Service summary view (registered user)
 * Status / phase: idea, planning, development, maintenance, to be deprecated/removed, removed/deprecated
-* Description
-* PO and contact information (email, organization, department, phone number)
-* Data sources and the rights to them (Github, JIRA etc.)
-* Name of organization responsible for service
-* Name of department responsible for service
-
-### Service information view (PO)
-* Status / phase: idea, planning, development, maintenance, to be deprecated/removed, removed/deprecated. Option to change the status / phase
-* In the other fields there must be an icon that allows edit text in place. (Must not open a separate editing form)
 * Description
 * PO and contact information (email, organization, department, phone number), link to profile
 * Data sources and the rights to them (Github, JIRA etc.)
 * Name of organization responsible for service
 * Name of department responsible for service
 
-API (to be continued)
+### Service summary view (PO)
+Anything in the registered user view with the following additions:
+* Option to change the status / phase
+* Icon that allows edit text in place. (Must not open a separate editing form)
+
+# API (to be continued)
 The portal must contain an open API. There must be a machine-readable Swagger 2.0 description of the API and the documentation must be generated from this. API management takes place in APIKA service. API must be CORS enabled.
 
-Preliminary list of API endpoints
----
+## Preliminary list of API endpoints
 * List organizations. Content:
   * Organization name
   * Organization id in this portal
