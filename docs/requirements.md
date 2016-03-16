@@ -64,7 +64,7 @@ organization view for each of these):
 * Data sources and the rights to them (Github, JIRA etc.)
 * Name of organization responsible for service
 * Name of department responsible for service
-* 
+
 ### Service information view (PO)
 * Status / phase: idea, planning, development, maintenance, to be deprecated/removed, removed/deprecated. Option to change the status / phase
 * In the other fields there must be an icon that allows edit text in place. (Must not open a separate editing form)
