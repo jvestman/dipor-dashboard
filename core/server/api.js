@@ -1,6 +1,10 @@
 // Global API configuration
 API = {};
 
+// Swagger UI tags
+OrganizationTag = "Organizations";
+DepartmentTag = "Departments";
+
 // Version 1
 API.v1 = new Restivus({
   apiPath: 'api/',
