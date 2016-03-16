@@ -8,17 +8,33 @@
     </ol>
     <div class="page-header">
       <h1>
-        <span id="department-name">
+        <span class="editable" id="department-name">
           {{ department.name }}
         </span>
       </h1>
     </div>
     <div id="organization" class="col-md-8">
       <p>
-        <i id="department-description">
+        <i class="editable" id="department-description">
           {{ department.description }}
         </i>
       </p>
+      {{# unless editMode }}
+        <button class="btn btn-default btn-xs" id="edit-department">
+          <span class="glyphicon glyphicon-pencil"></span>
+          Edit
+        </button>
+      {{else}}
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-success btn-xs" id="update-department">
+            <span class="glyphicon glyphicon-ok"></span>
+            Save
+          </button>
+          <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
+            Cancel
+          </button>
+        </div>
+      {{/ unless }} <!-- /unless editMode -->
     </div>
     <div class="col-md-4">
       <!-- TODO: add department members view-->
