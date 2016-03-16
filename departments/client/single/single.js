@@ -75,8 +75,7 @@ Template.singleDepartment.events({
     Departments.update(departmentId, {
       $set: {
         name: $('#department-name').text(),
-        description: $('#department-description').text(),
-        updatedAt: new Date()
+        description: $('#department-description').text()
       }
     });
 
