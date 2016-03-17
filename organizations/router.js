@@ -8,6 +8,6 @@ FlowRouter.route('/organizations', {
 FlowRouter.route('/organization/:organizationId', {
   name: 'singleOrganization',
   action: function (params) {
-    BlazeLayout.render("mainLayout", { main: "singleOrganization" });
+    BlazeLayout.render("mainLayout", { main: "singleOrganization", breadcrumb: "singleOrganizationBreadcrumb" });
   }
 });
