@@ -10,14 +10,25 @@ Template.singleDepartmentBreadcrumb.created = function () {
   instance.subscribe("singleOrganization", instance.organizationId);
   instance.subscribe("singleDepartment", instance.departmentId);
 
+  // Create reactive variables for organization and department
+  instance.organization = new ReactiveVar();
+  instance.department = new ReactiveVar();
+
   instance.autorun(function(){
     if (instance.subscriptionsReady()) {
 
+
       // Fetch particular organization by organization Id
-      instance.organization = Organizations.findOne(instance.organizationId);
+      const organization = Organizations.findOne(instance.organizationId);
+
+      // Update the organization reactive variable
+      instance.organization.set(organization);
 
       // Fetch particular department by department Id and organization Id (for security)
-      instance.department = Departments.findOne(instance.departmentId);
+      const department = Departments.findOne(instance.departmentId);
+
+      // Update the organization reactive variable
+      instance.department.set(department);
     }
   });
 };
@@ -28,13 +39,13 @@ Template.singleDepartmentBreadcrumb.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
-    return instance.organization;
+    return instance.organization.get();
   },
   department: function () {
 
     // Get reference to template instance
     const instance = Template.instance();
 
-    return instance.department;
+    return instance.department.get();
   }
 });
