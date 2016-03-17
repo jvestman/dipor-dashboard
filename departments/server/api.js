@@ -8,7 +8,7 @@ API.v1.addCollection(Departments, {
     get: {
       swagger: {
         tags: [
-          DepartmentTag
+          API.tags.department
         ],
         description: "Returns one department with given ID.",
         responses: {
@@ -21,7 +21,7 @@ API.v1.addCollection(Departments, {
     post: {
       swagger: {
         tags: [
-          DepartmentTag
+          API.tags.department
         ],
         description: "Add department.",
         responses: {
@@ -34,7 +34,7 @@ API.v1.addCollection(Departments, {
     put: {
       swagger: {
         tags: [
-          DepartmentTag
+          API.tags.department
         ],
         description: "Update department with given ID.",
         responses: {
@@ -47,7 +47,7 @@ API.v1.addCollection(Departments, {
     delete: {
       swagger: {
         tags: [
-          DepartmentTag
+          API.tags.department
         ],
         description: "Delete department with given ID.",
         responses: {
@@ -60,7 +60,7 @@ API.v1.addCollection(Departments, {
     getAll: {
       swagger: {
         tags: [
-          DepartmentTag
+          API.tags.department
         ],
         description: "Returns all departments.",
         responses: {
@@ -78,8 +78,8 @@ API.v1.addRoute('organizations/:id/departments', {authRequired: false}, {
   get: {
     swagger: {
       tags: [
-        OrganizationTag,
-        DepartmentTag
+        API.tags.organization,
+        API.tags.department
       ],
       description: "Returns all departments of given organization ID.",
       responses: {

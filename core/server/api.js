@@ -2,8 +2,10 @@
 API = {};
 
 // Swagger UI tags
-OrganizationTag = "Organizations";
-DepartmentTag = "Departments";
+API.tags = {
+  organization: "Organizations",
+  department: "Departments"
+};
 
 // Version 1
 API.v1 = new Restivus({

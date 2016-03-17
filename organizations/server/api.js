@@ -8,7 +8,7 @@ API.v1.addCollection(Organizations, {
     get: {
       swagger: {
         tags: [
-          OrganizationTag
+          API.tags.organization
         ],
         description: "Returns one organization with given ID.",
         responses: {
@@ -21,7 +21,7 @@ API.v1.addCollection(Organizations, {
     post: {
       swagger: {
         tags: [
-          OrganizationTag
+          API.tags.organization
         ],
         description: "Add organization.",
         responses: {
@@ -34,7 +34,7 @@ API.v1.addCollection(Organizations, {
     put: {
       swagger: {
         tags: [
-          OrganizationTag
+          API.tags.organization
         ],
         description: "Update organization with given ID.",
         responses: {
@@ -47,7 +47,7 @@ API.v1.addCollection(Organizations, {
     delete: {
       swagger: {
         tags: [
-          OrganizationTag
+          API.tags.organization
         ],
         description: "Delete organization with given ID.",
         responses: {
@@ -60,7 +60,7 @@ API.v1.addCollection(Organizations, {
     getAll: {
       swagger: {
         tags: [
-          OrganizationTag
+          API.tags.organization
         ],
         description: "Returns all organizations.",
         responses: {
