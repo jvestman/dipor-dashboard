@@ -13,3 +13,10 @@ Meteor.publish("singleDepartment", function (departmentId) {
 
   return department;
 });
+
+Meteor.publish("departmentMember", function (memberId) {
+  // Get all users from department member IDs
+  const member = Meteor.users.find(memberId);
+
+  return member;
+});
