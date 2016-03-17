@@ -31,5 +31,13 @@
   "singleOrganization-departments": "Departments",
   "singleOrganization-noDepartmentsFound": "No departments found",
   "singleDepartmentBreadcrumb-dipor": "Dipor",
-  "singleDepartmentBreadcrumb-organizations": "Organizations"
+  "singleDepartmentBreadcrumb-organizations": "Organizations",
+  "addDepartmentMember-addButton": "Add",
+  "addDepartmentMember-cancelButton": "Cancel",
+  "addDepartmentMember-emailField-helpText": "Enter an email address for an existing user account.",
+  "addDepartmentMember-emailField-label": "Email",
+  "addDepartmentMember-title": "Add member",
+  "departmentMembers-addButton": "Add",
+  "departmentMembers-header": "Members",
+  "departmentMembers-noResultsText": "Organization has no members."
 }
