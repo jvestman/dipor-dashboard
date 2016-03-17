@@ -26,7 +26,7 @@ Template.departmentMembers.helpers({
     // Get reference to a template instance
     const instance = Template.instance();
 
-    // Return department with provided organization Id
+    // Return department with provided department Id
     return Departments.findOne(instance.departmentId);
   }
 });
