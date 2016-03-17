@@ -30,5 +30,8 @@
   "singleOrganization-createDepartmentButton": "Create",
   "singleOrganization-departments": "Departments",
   "singleOrganization-noDepartmentsFound": "No departments found",
-  "singleDepartment-breadcrumb-organizations": "Organizations"
+  "singleDepartment-breadcrumb-organizations": "Organizations",
+  "singleDepartment-cancelButton": "Cancel",
+  "singleDepartment-editButton": "Edit",
+  "singleDepartment-saveButton": "Save",
 }

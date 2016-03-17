@@ -22,16 +22,16 @@
       {{# unless editMode }}
         <button class="btn btn-default btn-xs" id="edit-department">
           <span class="glyphicon glyphicon-pencil"></span>
-          Edit
+          {{_ "singleDepartment-editButton" }}
         </button>
       {{else}}
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-success btn-xs" id="update-department">
             <span class="glyphicon glyphicon-ok"></span>
-            Save
+            {{ _ "singleDepartment-saveButton" }}
           </button>
           <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
-            Cancel
+            {{_ "singleDepartment-cancelButton" }}
           </button>
         </div>
       {{/ unless }} <!-- /unless editMode -->
