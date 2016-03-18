@@ -14,22 +14,24 @@
           {{ department.description }}
         </i>
       </p>
-      {{# unless editMode }}
-        <button class="btn btn-default btn-xs" id="edit-department">
-          <span class="glyphicon glyphicon-pencil"></span>
-          {{_ "singleDepartment-editButton" }}
-        </button>
-      {{else}}
-        <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-success btn-xs" id="update-department">
-            <span class="glyphicon glyphicon-ok"></span>
-            {{ _ "singleDepartment-saveButton" }}
+      {{# if department.currentUserIsAdmin }}
+        {{# unless editMode }}
+          <button class="btn btn-default btn-xs" id="edit-department">
+            <span class="glyphicon glyphicon-pencil"></span>
+            {{_ "singleDepartment-editButton" }}
           </button>
-          <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
-            {{_ "singleDepartment-cancelButton" }}
-          </button>
-        </div>
-      {{/ unless }} <!-- /unless editMode -->
+        {{else}}
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success btn-xs" id="update-department">
+              <span class="glyphicon glyphicon-ok"></span>
+              {{ _ "singleDepartment-saveButton" }}
+            </button>
+            <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
+              {{_ "singleDepartment-cancelButton" }}
+            </button>
+          </div>
+        {{/ unless }} <!-- /unless editMode -->
+      {{/ if }}
     </div>
     <div class="col-md-4">
       <!-- TODO: add department members view-->
