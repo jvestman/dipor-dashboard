@@ -12,7 +12,15 @@ Departments.schema = new SimpleSchema({
   },
   "memberIds": {
     "type": [String],
-    "optional": true
+    "autoValue": function () {
+      // Check if field is already set
+      if (this.isInsert ) {
+        // If not set, add current user ID to memberIds array
+        const memberIdArray = [ Meteor.userId() ];
+
+        return memberIdArray;
+      }
+    }
   },
   "memberIds.$": {
     "type": String,
