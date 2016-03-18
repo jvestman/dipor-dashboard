@@ -34,16 +34,28 @@ Organizations.schema = new SimpleSchema({
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
   },
-  "createdAt": {
-    "type": Date,
-    "optional": true,
-    "autoValue": function () {
-      return new Date();
+  createdAt: {
+    type: Date,
+    autoValue: function () {
+
+      // Check if mongoDB insert operation is initial
+      if (this.isInsert)
+        return new Date();
+
+      // Check if mongoDB insert operation is initial
+      else if (this.isUpsert)
+        return { $setOnInsert: new Date() };
+
+      // If not - field is not updated
+      else
+        this.unset();
     }
   },
-  "updatedAt": {
-    "type": Date,
-    "optional": true
+  updatedAt: {
+    type: Date,
+    autoValue: function () {
+      return new Date();
+    }
   }
 });
 

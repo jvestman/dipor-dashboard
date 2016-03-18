@@ -3,17 +3,35 @@
   <div class="container">
     <div class="page-header">
       <h1>
-        <span id="department-name">
+        <span class="editable" id="department-name">
           {{ department.name }}
         </span>
       </h1>
     </div>
     <div id="organization" class="col-md-8">
       <p>
-        <i id="department-description">
+        <i class="editable" id="department-description">
           {{ department.description }}
         </i>
       </p>
+      {{# if department.currentUserIsAdmin }}
+        {{# unless editMode }}
+          <button class="btn btn-default btn-xs" id="edit-department">
+            <span class="glyphicon glyphicon-pencil"></span>
+            {{_ "singleDepartment-editButton" }}
+          </button>
+        {{else}}
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-success btn-xs" id="update-department">
+              <span class="glyphicon glyphicon-ok"></span>
+              {{ _ "singleDepartment-saveButton" }}
+            </button>
+            <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
+              {{_ "singleDepartment-cancelButton" }}
+            </button>
+          </div>
+        {{/ unless }} <!-- /unless editMode -->
+      {{/ if }}
     </div>
     <div class="col-md-4">
       {{> departmentMembers departmentId=department._id }}
