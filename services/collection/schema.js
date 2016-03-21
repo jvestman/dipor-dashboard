@@ -1,9 +1,9 @@
 Services.schema = new SimpleSchema({
-  'name': {
+  name: {
     type: String
   },
-  'organizationId': {
-    "type": String,
-    "regEx": SimpleSchema.RegEx.Id
-  }
+  logoId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  },
 });
