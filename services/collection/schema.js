@@ -12,5 +12,12 @@ Services.schema = new SimpleSchema({
   departmentId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
+  },
+  ownerIds: {
+    type: Array
+  },
+  "ownerIds.$": {
+    "type": String,
+    "regEx": SimpleSchema.RegEx.Id
   }
 });
