@@ -9,4 +9,8 @@ Services.schema = new SimpleSchema({
     type: String,
     regEx: SimpleSchema.RegEx.Id
   },
+  departmentId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  }
 });
