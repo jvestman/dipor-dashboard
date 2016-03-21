@@ -25,5 +25,12 @@ Services.schema = new SimpleSchema({
   },
   version: {
     type: String
+  },
+  dataSourceIds: {
+    type: Array
+  },
+  "dataSourceIds.$": {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
   }
 });
