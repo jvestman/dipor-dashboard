@@ -13,3 +13,11 @@ Meteor.publish("singleService", funciton (serviceId) {
 
   return singleService;
 });
+
+/* Service(s) for a given department */
+Meteor.publish("departmentServices", funciton (departmentId) {
+  // Find all services for a given department (database pointer)
+  const departmentServices = Services.find({ departmentId: departmentId });
+
+  return departmentServices;
+});
