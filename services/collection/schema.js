@@ -4,7 +4,7 @@ Services.schema = new SimpleSchema({
   },
   description: {
     type: String
-  }
+  },
   logoId: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
