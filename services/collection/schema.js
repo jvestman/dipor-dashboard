@@ -32,5 +32,8 @@ Services.schema = new SimpleSchema({
   "dataSourceIds.$": {
     type: String,
     regEx: SimpleSchema.RegEx.Id
+  },
+  visibility: {
+    type: String
   }
 });
