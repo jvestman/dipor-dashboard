@@ -1,0 +1,3 @@
+Services.schema = new SimpleSchema({
+
+});
