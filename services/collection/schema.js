@@ -37,3 +37,6 @@ Services.schema = new SimpleSchema({
     type: String
   }
 });
+
+// Attach the schema for automatic validation
+Services.attachSchema(Services.schema);
