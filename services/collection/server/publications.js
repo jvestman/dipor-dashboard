@@ -21,3 +21,11 @@ Meteor.publish("departmentServices", function (departmentId) {
 
   return departmentServices;
 });
+
+/* Service(s) for a given owner */
+Meteor.publish("ownerServices", function (ownerId) {
+  // Find all services for a given project owner (database pointer)
+  const ownerServices = Services.find({ ownerIds: ownerId });
+
+  return ownerServices;
+});
