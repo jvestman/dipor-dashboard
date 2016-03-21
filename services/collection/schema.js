@@ -19,5 +19,8 @@ Services.schema = new SimpleSchema({
   "ownerIds.$": {
     "type": String,
     "regEx": SimpleSchema.RegEx.Id
+  },
+  stage: {
+    type: String
   }
 });
