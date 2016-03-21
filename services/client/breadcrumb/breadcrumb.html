@@ -1,0 +1,13 @@
+<template name="singleServiceBreadcrumb">
+  {{# if Template.subscriptionsReady }}
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="/">Dipor</a></li>
+        <li><a href="/organizations">Organizations</a></li>
+        <li><a href="#">Organization</a></li>
+        <li><a href="#">Department</a></li>
+        <li><a href="#">{{ service.name }}</a></li>
+      </ol>
+    </div>
+  {{/ if }}
+</template>
