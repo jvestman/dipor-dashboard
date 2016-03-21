@@ -22,5 +22,8 @@ Services.schema = new SimpleSchema({
   },
   stage: {
     type: String
+  },
+  version: {
+    type: String
   }
 });
