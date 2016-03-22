@@ -1,12 +1,6 @@
 // Global API configuration
 API = {};
 
-// Swagger UI tags
-API.tags = {
-  organization: "Organizations",
-  department: "Departments"
-};
-
 // Version 1
 API.v1 = new Restivus({
   apiPath: 'api/',
@@ -33,6 +27,30 @@ API.v1 = new Restivus({
     }
   }
 });
+
+// Swagger parameter definitions
+API.v1.params = {
+  departmentId: {
+    name: "id",
+    in: "path",
+    description: "Department ID",
+    required: true,
+    type: "string"
+  },
+  organizationId: {
+    name: "id",
+    in: "path",
+    description: "Organization ID",
+    required: true,
+    type: "string"
+  }
+};
+
+// Swagger UI tags
+API.v1.tags = {
+  organization: "Organizations",
+  department: "Departments"
+};
 
 // Enable user endpoints if authentication is enabled
 if(API.v1._config.useDefaultAuth) {
