@@ -1,4 +1,6 @@
 <template name="mainLayout">
   {{> mainLayoutNavigation }}
+  {{> Template.dynamic template=breadcrumb}}
   {{> Template.dynamic template=main}}
+  {{> sAlert}}
 </template>
