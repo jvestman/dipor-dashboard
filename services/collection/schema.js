@@ -20,7 +20,7 @@ Services.schema = new SimpleSchema({
     type: String,
     regEx: SimpleSchema.RegEx.Id
   },
-  stage: {
+  status: {
     type: String
   },
   version: {
