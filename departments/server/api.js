@@ -8,9 +8,12 @@ API.v1.addCollection(Departments, {
     get: {
       swagger: {
         tags: [
-          API.tags.department
+          API.v1.tags.department
         ],
         description: "Returns one department with given ID.",
+        parameters: [
+          API.v1.params.departmentId
+        ],
         responses: {
           "200": {
             description: "One department"
@@ -21,7 +24,7 @@ API.v1.addCollection(Departments, {
     post: {
       swagger: {
         tags: [
-          API.tags.department
+          API.v1.tags.department
         ],
         description: "Add department.",
         responses: {
@@ -34,9 +37,12 @@ API.v1.addCollection(Departments, {
     put: {
       swagger: {
         tags: [
-          API.tags.department
+          API.v1.tags.department
         ],
         description: "Update department with given ID.",
+        parameters: [
+          API.v1.params.departmentId
+        ],
         responses: {
           "200": {
             description: "Returns updated department."
@@ -47,9 +53,12 @@ API.v1.addCollection(Departments, {
     delete: {
       swagger: {
         tags: [
-          API.tags.department
+          API.v1.tags.department
         ],
         description: "Delete department with given ID.",
+        parameters: [
+          API.v1.params.departmentId
+        ],
         responses: {
           "200": {
             description: "Successful delete."
@@ -60,7 +69,7 @@ API.v1.addCollection(Departments, {
     getAll: {
       swagger: {
         tags: [
-          API.tags.department
+          API.v1.tags.department
         ],
         description: "Returns all departments.",
         responses: {
@@ -78,10 +87,13 @@ API.v1.addRoute('organizations/:id/departments', {authRequired: false}, {
   get: {
     swagger: {
       tags: [
-        API.tags.organization,
-        API.tags.department
+        API.v1.tags.organization,
+        API.v1.tags.department
       ],
       description: "Returns all departments of given organization ID.",
+      parameters: [
+        API.v1.params.organizationId
+      ],
       responses: {
         "200": {
           description: "List of departments."
