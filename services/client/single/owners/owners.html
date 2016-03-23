@@ -1,0 +1,23 @@
+<template name="serviceOwners">
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <span>
+        <i class="fa fa-users"></i>
+        Owners
+      </span>
+    </div>
+    <div class="panel-body">
+      {{# if service.ownerIds }}
+      <ul class="list-group">
+        {{# each ownerId in service.ownerIds }}
+          {{> serviceOwner ownerId=ownerId }}
+        {{/ each }}
+      </ul>
+      {{ else }}
+      <div class="blank-state jumbotron">
+        <i>No service owners yet.</i>
+      </div>
+      {{/ if }}
+    </div> <!-- /.panel-body -->
+  </div>
+</template>
