@@ -3,8 +3,8 @@
     <div class="page-header">
       <h1>
         {{ service.name }}
-        <small class="pull-right">
-          <span class="label label-success">{{ service.stage }} - v{{ service.version }}</span>
+        <small>
+          v{{ service.version }} - {{ service.status }}
         </small>
       </h1>
     </div>
@@ -13,13 +13,11 @@
         <p>
           <i>{{ service.description }}</i>
         </p>
-        <div class="jumbotron">
-          <i>List of resourses ... </i>
-        </div>
       </div>
       <div class="col-md-4">
-        <h3>Owner:</h3>
-        <p>{{ currentUser.profile.firstName }} {{ currentUser.profile.lastName }}</p>
+        {{# each owner in service.ownerIds }}
+          {{> serviceOwners service=service }}
+        {{/ each}}
       </div>
     </div>
   </div>
