@@ -29,3 +29,11 @@ Meteor.publish("ownerServices", function (ownerId) {
 
   return ownerServices;
 });
+
+Meteor.publish("serviceOwner", function (ownerId) {
+
+  // Get all users from service owner IDs
+  const owner = Meteor.users.find(ownerId);
+
+  return owner;
+});
