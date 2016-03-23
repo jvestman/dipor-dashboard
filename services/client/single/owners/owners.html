@@ -3,7 +3,7 @@
     <div class="panel-heading clearfix">
       <span>
         <i class="fa fa-users"></i>
-        Owners
+        {{_ "singleService-owners" }}
       </span>
     </div>
     <div class="panel-body">
@@ -15,7 +15,7 @@
       </ul>
       {{ else }}
       <div class="blank-state jumbotron">
-        <i>No service owners yet.</i>
+        <i>{{_ "singleService-noOwnersFound" }}</i>
       </div>
       {{/ if }}
     </div> <!-- /.panel-body -->
