@@ -8,11 +8,11 @@ API.v1.addCollection(Departments, {
     get: {
       swagger: {
         tags: [
-          API.v1.tags.department
+          API.v1.swagger.tags.department
         ],
         description: "Returns one department with given ID.",
         parameters: [
-          API.v1.params.departmentId
+          API.v1.swagger.params.departmentId
         ],
         responses: {
           "200": {
@@ -24,9 +24,12 @@ API.v1.addCollection(Departments, {
     post: {
       swagger: {
         tags: [
-          API.v1.tags.department
+          API.v1.swagger.tags.department
         ],
         description: "Add department.",
+        parameters: [
+          API.v1.swagger.params.department
+        ],
         responses: {
           "200": {
             description: "Return department that was added."
@@ -37,11 +40,11 @@ API.v1.addCollection(Departments, {
     put: {
       swagger: {
         tags: [
-          API.v1.tags.department
+          API.v1.swagger.tags.department
         ],
         description: "Update department with given ID.",
         parameters: [
-          API.v1.params.departmentId
+          API.v1.swagger.params.departmentId
         ],
         responses: {
           "200": {
@@ -53,11 +56,11 @@ API.v1.addCollection(Departments, {
     delete: {
       swagger: {
         tags: [
-          API.v1.tags.department
+          API.v1.swagger.tags.department
         ],
         description: "Delete department with given ID.",
         parameters: [
-          API.v1.params.departmentId
+          API.v1.swagger.params.departmentId
         ],
         responses: {
           "200": {
@@ -69,7 +72,7 @@ API.v1.addCollection(Departments, {
     getAll: {
       swagger: {
         tags: [
-          API.v1.tags.department
+          API.v1.swagger.tags.department
         ],
         description: "Returns all departments.",
         responses: {
@@ -87,12 +90,12 @@ API.v1.addRoute('organizations/:id/departments', {authRequired: false}, {
   get: {
     swagger: {
       tags: [
-        API.v1.tags.organization,
-        API.v1.tags.department
+        API.v1.swagger.tags.organization,
+        API.v1.swagger.tags.department
       ],
       description: "Returns all departments of given organization ID.",
       parameters: [
-        API.v1.params.organizationId
+        API.v1.swagger.params.organizationId
       ],
       responses: {
         "200": {

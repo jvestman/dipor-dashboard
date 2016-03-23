@@ -8,11 +8,11 @@ API.v1.addCollection(Organizations, {
     get: {
       swagger: {
         tags: [
-          API.v1.tags.organization
+          API.v1.swagger.tags.organization
         ],
         description: "Returns one organization with given ID.",
         parameters: [
-          API.v1.params.organizationId
+          API.v1.swagger.params.organizationId
         ],
         responses: {
           "200": {
@@ -24,9 +24,12 @@ API.v1.addCollection(Organizations, {
     post: {
       swagger: {
         tags: [
-          API.v1.tags.organization
+          API.v1.swagger.tags.organization
         ],
         description: "Add organization.",
+        parameters: [
+          API.v1.swagger.params.organization
+        ],
         responses: {
           "200": {
             description: "Return organization that was added."
@@ -37,11 +40,11 @@ API.v1.addCollection(Organizations, {
     put: {
       swagger: {
         tags: [
-          API.v1.tags.organization
+          API.v1.swagger.tags.organization
         ],
         description: "Update organization with given ID.",
         parameters: [
-          API.v1.params.organizationId
+          API.v1.swagger.params.organizationId
         ],
         responses: {
           "200": {
@@ -53,11 +56,11 @@ API.v1.addCollection(Organizations, {
     delete: {
       swagger: {
         tags: [
-          API.v1.tags.organization
+          API.v1.swagger.tags.organization
         ],
         description: "Delete organization with given ID.",
         parameters: [
-          API.v1.params.organizationId
+          API.v1.swagger.params.organizationId
         ],
         responses: {
           "200": {
@@ -69,7 +72,7 @@ API.v1.addCollection(Organizations, {
     getAll: {
       swagger: {
         tags: [
-          API.v1.tags.organization
+          API.v1.swagger.tags.organization
         ],
         description: "Returns all organizations.",
         responses: {
