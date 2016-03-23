@@ -10,8 +10,13 @@ API.v1 = new Restivus({
   },
   useDefaultAuth: false,
   prettyJson: true,
-  enableCors: true,
-  swagger: {
+  enableCors: true
+});
+
+// Add Restivus Swagger configuration
+// - meta, definitions, params, tags
+API.v1.swagger = {
+  meta: {
     swagger: "2.0",
     info: {
       version: "1.0.0",
@@ -25,32 +30,111 @@ API.v1 = new Restivus({
         name: "MIT"
       }
     }
-  }
-});
-
-// Swagger parameter definitions
-API.v1.params = {
-  departmentId: {
-    name: "id",
-    in: "path",
-    description: "Department ID",
-    required: true,
-    type: "string"
   },
-  organizationId: {
-    name: "id",
-    in: "path",
-    description: "Organization ID",
-    required: true,
-    type: "string"
+  definitions: {
+    newOrganization: {
+      type: "object",
+      required: [
+        "name",
+        "description",
+        "administratorIds"
+      ],
+      properties: {
+        "name": {
+          type: "string"
+        },
+        "description": {
+          type: "string"
+        },
+        "administratorIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "memberIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "contactPersonId": {
+          type: "string"
+        }
+      }
+    },
+    newDepartment: {
+      type: "object",
+      required: [
+        "name",
+        "description",
+        "organizationId",
+        "administratorIds"
+      ],
+      properties: {
+        "name": {
+          type: "string"
+        },
+        "description": {
+          type: "string"
+        },
+        "organizationId": {
+          type: "string"
+        },
+        "administratorIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "memberIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        }
+      }
+    }
+  },
+  params: {
+    departmentId: {
+      name: "id",
+      in: "path",
+      description: "Department ID",
+      required: true,
+      type: "string"
+    },
+    organizationId: {
+      name: "id",
+      in: "path",
+      description: "Organization ID",
+      required: true,
+      type: "string"
+    },
+    department: {
+      name: "department",
+      in: "body",
+      description: "Department to add.",
+      required: true,
+      schema: {
+        $ref: "#/definitions/newDepartment"
+      }
+    },
+    organization: {
+      name: "organization",
+      in: "body",
+      description: "Organization to add.",
+      required: true,
+      schema: {
+        $ref: "#/definitions/newOrganization"
+      }
+    },
+  },
+  tags: {
+    organization: "Organizations",
+    department: "Departments"
   }
-};
-
-// Swagger UI tags
-API.v1.tags = {
-  organization: "Organizations",
-  department: "Departments"
-};
+}
 
 // Enable user endpoints if authentication is enabled
 if(API.v1._config.useDefaultAuth) {
