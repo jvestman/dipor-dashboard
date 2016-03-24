@@ -94,6 +94,21 @@ API.v1.swagger = {
           }
         }
       }
+    },
+    newService: {
+      type: "object",
+      required: [
+        "name",
+        "description"
+      ],
+      properties: {
+        "name": {
+          type: "string"
+        },
+        "description": {
+          type: "string"
+        }
+      }
     }
   },
   params: {
@@ -108,6 +123,13 @@ API.v1.swagger = {
       name: "id",
       in: "path",
       description: "Organization ID",
+      required: true,
+      type: "string"
+    },
+    serviceId: {
+      name: "id",
+      in: "path",
+      description: "Service ID",
       required: true,
       type: "string"
     },
@@ -129,10 +151,20 @@ API.v1.swagger = {
         $ref: "#/definitions/newOrganization"
       }
     },
+    service: {
+      name: "service",
+      in: "body",
+      description: "Service to add.",
+      required: true,
+      schema: {
+        $ref: "#/definitions/newService"
+      }
+    }
   },
   tags: {
     organization: "Organizations",
-    department: "Departments"
+    department: "Departments",
+    service: "Services"
   }
 }
 
