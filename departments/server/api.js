@@ -109,7 +109,12 @@ API.v1.addRoute('organizations/:id/departments', {authRequired: false}, {
       // Fetch all departments of the given organization
       const departments = Departments.find({ "organizationId": organizationId }).fetch();
 
-      return departments;
+      // Build response
+      const response = {
+        status: "success",
+        data: departments
+      }
+      return response;
     }
   }
 });
