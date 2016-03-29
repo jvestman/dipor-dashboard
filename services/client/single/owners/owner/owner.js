@@ -11,11 +11,12 @@ Template.serviceOwner.onCreated(function () {
 });
 
 Template.serviceOwner.helpers({
-  "ownerEmail": function () {
+  ownerEmail () {
 
     // Get reference to template instance
     const instance = Template.instance();
 
+    // Get user by Id
     const owner = Meteor.users.findOne(instance.ownerId);
 
     // Make sure owner is available,
