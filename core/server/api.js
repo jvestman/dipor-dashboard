@@ -99,13 +99,42 @@ API.v1.swagger = {
       type: "object",
       required: [
         "name",
-        "description"
+        "description",
+        "departmentId",
+        "ownerIds"
       ],
       properties: {
         "name": {
           type: "string"
         },
         "description": {
+          type: "string"
+        },
+        "logoId": {
+          type: "string"
+        },
+        "departmentId": {
+          type: "string"
+        },
+        "ownerIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "status": {
+          type: "string"
+        },
+        "version": {
+          type: "string"
+        },
+        "dataSourceIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "visibility": {
           type: "string"
         }
       }
