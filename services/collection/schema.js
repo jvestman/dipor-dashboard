@@ -21,7 +21,19 @@ Services.schema = new SimpleSchema({
     regEx: SimpleSchema.RegEx.Id
   },
   status: {
-    type: String
+    type: String,
+    allowedValues: [
+      "idea",
+      "design",
+      "deciding",
+      "development",
+      "proofOfConcept",
+      "alpha",
+      "beta",
+      "production",
+      "sunset",
+      "retired"
+    ]
   },
   version: {
     type: String
