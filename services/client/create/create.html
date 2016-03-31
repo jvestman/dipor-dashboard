@@ -1,4 +1,4 @@
-<template name="createServices">
+<template name="createService">
   <div class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -7,10 +7,11 @@
             {{_ "createServices-header" }}
           </h4>
         </div>
-        {{#autoForm collection="Services" id="createServicesForm" type="insert"}}
+        {{#autoForm collection="Services" id="createServiceForm" type="insert"}}
         <div class="modal-body">
           {{> afQuickField name='name' }}
           {{> afQuickField name='description' }}
+          {{> afQuickField name='departmentId' value=departmentId}}
         </div>
 
         <div class="modal-footer">
