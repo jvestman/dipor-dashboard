@@ -4,4 +4,6 @@ Template.departmentServices.onCreated(function () {
 
   // Get department ID from template data context
   instance.departmentId = instance.data.departmentId;
+
+  instance.subscribe("departmentServices", instance.departmentId)
 });
