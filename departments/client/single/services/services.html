@@ -5,12 +5,12 @@
         <button
           id="create-service"
           class="btn btn-default btn-xs pull-right">
-          {{_ "singleDepartment-createServiceButton" }}
+          {{_ "departmentServices-createServiceButton" }}
         </button>
       {{/ if }}
       <span>
         <i class="fa fa-rocket"></i>&nbsp;
-        {{_ "singleDepartment-departments" }}
+        {{_ "departmentServices-services" }}
       </span>
     </div>
     <div class="panel-body">
@@ -22,7 +22,7 @@
         </ul>
       {{ else }}
         <div class="blank-state jumbotron">
-          <i>{{_ "singleDepartment-noServicesFound" }}</i>
+          <i>{{_ "departmentServices-noServicesFound" }}</i>
         </div>
       {{/ if }}
     </div> <!-- /.panel-body -->
