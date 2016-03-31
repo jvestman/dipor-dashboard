@@ -20,7 +20,7 @@ Template.serviceOwner.helpers({
     const owner = Meteor.users.findOne(instance.ownerId);
 
     // Make sure owner is available,
-    // since Meteor.users.findOne may return an empty array
+    // since Meteor.users.findOne may return an undifined
     if (owner) {
 
       // Get owner's primary email address
