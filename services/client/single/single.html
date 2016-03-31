@@ -1,0 +1,25 @@
+<template name="singleService">
+  <div class="container">
+    <div class="page-header">
+      <h1>
+        {{ service.name }}
+        <small>
+          v{{ service.version }} - {{ service.status }}
+        </small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          <i>{{ service.description }}</i>
+        </p>
+        <!-- TODO: Data sources list -->
+      </div>
+      <div class="col-md-4">
+        {{# each owner in service.ownerIds }}
+          {{> serviceOwners service=service }}
+        {{/ each}}
+      </div>
+    </div>
+  </div>
+</template>
