@@ -1,0 +1,3 @@
+Template.departmentServices.onCreated(function () {
+  
+});
