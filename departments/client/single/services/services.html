@@ -18,7 +18,10 @@
       {{# if department.services }}
         <ul class="list-group">
           {{# each service in department.services }}
-            {{ service.name }}
+            <li class="list-group-item">
+              <i class="fa fa-rocket"></i>&nbsp;
+              {{ service.name }}
+            </li>
           {{/ each }}
         </ul>
       {{ else }}
