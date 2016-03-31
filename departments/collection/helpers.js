@@ -12,5 +12,14 @@ Departments.helpers({
     } catch(err) {
       return false;
     }
+  },
+  "services" () {
+    // Assign department ID instance to a variable
+    const departmentId = this._id;
+
+    // Find all services related to current department
+    const departmentServices = Services.find({departmentId}).fetch();
+
+    return departmentServices;
   }
 });

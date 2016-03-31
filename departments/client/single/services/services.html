@@ -1,0 +1,34 @@
+<template name="departmentServices">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{# if department.currentUserIsAdmin }}
+        <button
+          id="create-service"
+          class="btn btn-default btn-xs pull-right">
+          <i class="fa fa-rocket"></i>&nbsp;
+          {{_ "departmentServices-createServiceButton" }}
+        </button>
+      {{/ if }}
+      <span>
+        <i class="fa fa-rocket"></i>&nbsp;
+        {{_ "departmentServices-services" }}
+      </span>
+    </div>
+    <div class="panel-body">
+      {{# if department.services }}
+        <ul class="list-group">
+          {{# each service in department.services }}
+            <li class="list-group-item">
+              <i class="fa fa-rocket"></i>&nbsp;
+              {{ service.name }}
+            </li>
+          {{/ each }}
+        </ul>
+      {{ else }}
+        <div class="blank-state jumbotron">
+          <i>{{_ "departmentServices-noServicesFound" }}</i>
+        </div>
+      {{/ if }}
+    </div> <!-- /.panel-body -->
+  </div>
+</template>
