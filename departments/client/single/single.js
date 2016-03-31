@@ -79,6 +79,17 @@ Template.singleDepartment.events({
 
     // Update reactive variable
     instance.editMode.set(false);
+  },
+  "click #create-service": function () {
+
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Get organization reference
+    const departmentId = instance.departmentId;
+
+    // Show the create organization modal
+    Modal.show('createService', {departmentId});
   }
 });
 
