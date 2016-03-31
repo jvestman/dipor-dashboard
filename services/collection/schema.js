@@ -7,7 +7,8 @@ Services.schema = new SimpleSchema({
   },
   logoId: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
+    optional: true
   },
   departmentId: {
     type: String,
@@ -39,14 +40,16 @@ Services.schema = new SimpleSchema({
     type: String
   },
   dataSourceIds: {
-    type: Array
+    type: Array,
+    optional: true
   },
   "dataSourceIds.$": {
     type: String,
     regEx: SimpleSchema.RegEx.Id
   },
   visibility: {
-    type: String
+    type: String,
+    optional: true
   }
 });
 
