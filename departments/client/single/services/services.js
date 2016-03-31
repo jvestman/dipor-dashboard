@@ -3,5 +3,5 @@ Template.departmentServices.onCreated(function () {
   const instance = this;
 
   // Get department ID from template data context
-  instance.departmentId = instance.data.department._id;
+  instance.departmentId = instance.data.departmentId;
 });
