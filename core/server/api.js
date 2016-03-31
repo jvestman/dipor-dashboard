@@ -94,6 +94,50 @@ API.v1.swagger = {
           }
         }
       }
+    },
+    newService: {
+      type: "object",
+      required: [
+        "name",
+        "description",
+        "departmentId",
+        "ownerIds"
+      ],
+      properties: {
+        "name": {
+          type: "string"
+        },
+        "description": {
+          type: "string"
+        },
+        "logoId": {
+          type: "string"
+        },
+        "departmentId": {
+          type: "string"
+        },
+        "ownerIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "status": {
+          type: "string"
+        },
+        "version": {
+          type: "string"
+        },
+        "dataSourceIds": {
+          type: "array",
+          items: {
+            type: "string"
+          }
+        },
+        "visibility": {
+          type: "string"
+        }
+      }
     }
   },
   params: {
@@ -108,6 +152,13 @@ API.v1.swagger = {
       name: "id",
       in: "path",
       description: "Organization ID",
+      required: true,
+      type: "string"
+    },
+    serviceId: {
+      name: "id",
+      in: "path",
+      description: "Service ID",
       required: true,
       type: "string"
     },
@@ -129,10 +180,20 @@ API.v1.swagger = {
         $ref: "#/definitions/newOrganization"
       }
     },
+    service: {
+      name: "service",
+      in: "body",
+      description: "Service to add.",
+      required: true,
+      schema: {
+        $ref: "#/definitions/newService"
+      }
+    }
   },
   tags: {
     organization: "Organizations",
-    department: "Departments"
+    department: "Departments",
+    service: "Services"
   }
 }
 
