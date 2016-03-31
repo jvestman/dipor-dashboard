@@ -1,3 +1,30 @@
 <template name="departmentServices">
-  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{# if department.currentUserIsAdmin }}
+        <button
+          id="create-service"
+          class="btn btn-default btn-xs pull-right">
+          {{_ "singleDepartment-createServiceButton" }}
+        </button>
+      {{/ if }}
+      <span>
+        <i class="fa fa-rocket"></i>&nbsp;
+        {{_ "singleDepartment-departments" }}
+      </span>
+    </div>
+    <div class="panel-body">
+      {{# if department.services.count }}
+        <ul class="list-group">
+          {{# each service in department.services }}
+            {{ service.name }}
+          {{/ each }}
+        </ul>
+      {{ else }}
+        <div class="blank-state jumbotron">
+          <i>{{_ "singleDepartment-noServicesFound" }}</i>
+        </div>
+      {{/ if }}
+    </div> <!-- /.panel-body -->
+  </div>
 </template>
