@@ -12,7 +12,10 @@ Services.schema = new SimpleSchema({
   },
   departmentId: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
+    autoform: {
+      type: "hidden"
+    }
   },
   ownerIds: {
     type: Array
