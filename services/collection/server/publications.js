@@ -37,3 +37,12 @@ Meteor.publish("departmentServices", function (departmentId) {
 
   return departmentServices;
 });
+
+/* Get owner(s) for a specific service, based on user IDs array */
+Meteor.publish("serviceOwner", function (ownerIds) {
+
+  // Get all users from service owner IDs
+  const owner = Meteor.users.find(ownerIds);
+
+  return owner;
+});
