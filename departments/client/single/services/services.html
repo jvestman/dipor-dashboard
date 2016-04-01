@@ -19,8 +19,10 @@
         <ul class="list-group">
           {{# each service in department.services }}
             <li class="list-group-item">
-              <i class="fa fa-rocket"></i>&nbsp;
-              {{ service.name }}
+              <a href="{{ pathFor "singleService" serviceId=service._id }}">
+                <i class="fa fa-rocket"></i>&nbsp;
+                {{ service.name }}
+              </a>
             </li>
           {{/ each }}
         </ul>
