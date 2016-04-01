@@ -14,6 +14,7 @@
         <p>
           <i class="editable" id="service-description">{{ service.description }}</i>
         </p>
+        {{# if service.currentUserIsOwner }}
         {{# unless editMode }}
         <button class="btn btn-default btn-xs" id="edit-service">
           <span class="glyphicon glyphicon-pencil"></span>
@@ -30,6 +31,7 @@
           </button>
         </div>
         {{/ unless }} <!-- /unless editMode -->
+        {{/ if }} <!-- /if currentUserIsOwner -->
         <!-- TODO: Data sources list -->
       </div>
       <div class="col-md-4">
