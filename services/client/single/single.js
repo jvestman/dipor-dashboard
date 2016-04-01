@@ -9,6 +9,7 @@ Template.singleService.created = function () {
   // Subscribe to singleService publication
   instance.subscribe("singleService", instance.serviceId);
 
+  // Initialise reactive variable to track editMode state
   instance.editMode = new ReactiveVar(false);
 
   instance.autorun(() => {
