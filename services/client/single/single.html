@@ -18,16 +18,16 @@
         {{# unless editMode }}
         <button class="btn btn-default btn-xs" id="edit-service">
           <span class="glyphicon glyphicon-pencil"></span>
-          Edit
+          {{_ "singleService-editButton" }}
         </button>
         {{else}}
         <div class="btn-group" role="group" aria-label="...">
           <button type="button" class="btn btn-success btn-xs" id="update-service">
             <span class="glyphicon glyphicon-ok"></span>
-            Save
+            {{_ "singleService-saveButton" }}
           </button>
           <button type="button" class="btn btn-default btn-xs" id="cancel-edit">
-            Cancel
+            {{_ "singleService-cancelButton" }}
           </button>
         </div>
         {{/ unless }} <!-- /unless editMode -->
