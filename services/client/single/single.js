@@ -24,13 +24,15 @@ Template.singleService.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
-    // Fetch service by Id and return
+    // Return service object
     return instance.service;
   },
   editMode () {
 
+    // Get reference to template instance
     const instance = Template.instance();
 
+    // Return edit mode reactive variable (boolean)
     return instance.editMode.get();
   }
 });
@@ -43,6 +45,7 @@ Template.singleService.events({
     // Get reference to template instance
     const instance = Template.instance();
 
+    // Initialize medium editor
     instance.serviceEditor = new MediumEditor('.editable', {
       toolbar: false,
       disableReturn: true,
