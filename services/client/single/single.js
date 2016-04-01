@@ -76,7 +76,6 @@ Template.singleService.events({
     $('#service-name').text(service.name);
     $('#service-description').text(service.description);
     $('#service-version').text(service.version);
-    $('#service-status').text(service.status);
 
   },
   'click #update-service': function (event) {
@@ -95,7 +94,6 @@ Template.singleService.events({
         name: $('#service-name').text(),
         description: $('#service-description').text(),
         version: $('#service-version').text(),
-        status: $('#service-status').text()
       }
     });
 
