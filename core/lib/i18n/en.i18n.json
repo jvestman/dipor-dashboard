@@ -51,5 +51,8 @@
   "departmentMembers-header": "Members",
   "departmentMembers-noResultsText": "Department has no members.",
   "singleService-owners": "Owners",
-  "singleService-noOwnersFound": "No service owners found."
+  "singleService-noOwnersFound": "No service owners found.",
+  "singleService-cancelButton": "Cancel",
+  "singleService-editButton": "Edit",
+  "singleService-saveButton": "Save"
 }
