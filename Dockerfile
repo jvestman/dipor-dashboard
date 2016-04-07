@@ -1,14 +1,11 @@
 FROM ubuntu
+RUN apt-get update ; apt-get install language-pack-en curl -y
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-# Install app dependencies
-RUN dpkg-reconfigure locales; apt-get update ; apt-get install language-pack-en curl -y ; curl https://install.meteor.com/ | sh
-
-# Bundle app source
-COPY . /usr/src/app
-
+RUN mkdir /opt/dipor
+WORKDIR /opt/dipor
+RUN useradd -ms /bin/bash dipor
+USER dipor
+COPY . /opt/dipor
+RUN curl https://install.meteor.com/ | sh
 EXPOSE 3000
-CMD "meteor"
+CMD "/home/dipor/.meteor/meteor"
